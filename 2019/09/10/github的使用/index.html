@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="CPPHexo">
 <meta property="og:description" content="什么是GitHubgithub是一个面向开源及私有的软件项目托管平台，只支持git作为唯一的版本库进行托管。之前使用hexo的框架为自己搭建了这个博客，使用GitHub托管了这个项目，使得别人能够访问到自己的博客。 分布式管理系统集中式和分布式的区别：集中式中央服务器挂掉不能工作，分布式没有影响之前使用过SVN就是集中式版本管理系统。 怎么将项目推送到github（基本项目发布操作）1.在你的gi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-10T11:43:30.388Z">
+<meta property="og:updated_time" content="2019-09-10T12:11:42.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github的使用">
 <meta name="twitter:description" content="什么是GitHubgithub是一个面向开源及私有的软件项目托管平台，只支持git作为唯一的版本库进行托管。之前使用hexo的框架为自己搭建了这个博客，使用GitHub托管了这个项目，使得别人能够访问到自己的博客。 分布式管理系统集中式和分布式的区别：集中式中央服务器挂掉不能工作，分布式没有影响之前使用过SVN就是集中式版本管理系统。 怎么将项目推送到github（基本项目发布操作）1.在你的gi">
@@ -176,23 +176,36 @@
       
         <h1 id="什么是GitHub"><a href="#什么是GitHub" class="headerlink" title="什么是GitHub"></a>什么是GitHub</h1><p>github是一个面向开源及私有的软件项目托管平台，只支持git作为唯一的版本库进行托管。<br>之前使用hexo的框架为自己搭建了这个博客，使用GitHub托管了这个项目，使得别人能够访问到自己的博客。</p>
 <h2 id="分布式管理系统"><a href="#分布式管理系统" class="headerlink" title="分布式管理系统"></a>分布式管理系统</h2><p>集中式和分布式的区别：集中式中央服务器挂掉不能工作，分布式没有影响<br>之前使用过SVN就是集中式版本管理系统。</p>
-<h1 id="怎么将项目推送到github（基本项目发布操作）"><a href="#怎么将项目推送到github（基本项目发布操作）" class="headerlink" title="怎么将项目推送到github（基本项目发布操作）"></a>怎么将项目推送到github（基本项目发布操作）</h1><p>1.在你的github网站中新建一个仓库（Repositories），填写相关数据；<br>2.复制仓库地址，选择HTTPS,例如:<a href="https://github.com/chengpingping/github.git；" target="_blank" rel="noopener">https://github.com/chengpingping/github.git；</a><br>3.在你已经创建的项目目录下，在路径栏中输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.首先，你有创建一个git的版本，在dos框中输入：```git init</span><br></pre></td></tr></table></figure></p>
-<p>5.此时你可以查看工作区有没有新的文件，也就是可以推送的文件：<figure class="highlight plain"><figcaption><span>statue```;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">6.添加你要推送的项目到暂存区:有两种方法;</span><br><span class="line">	添加某个文件：```git add 文件名```;</span><br><span class="line">	添加所有文件：```git add .</span><br></pre></td></tr></table></figure></p>
-<p>7.将暂存区的文件提交到版本记录中：<figure class="highlight plain"><figcaption><span>commit -m "提示信息"```;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8.连接你在开头建好的仓库：```git remote add origin 仓库地址```;</span><br><span class="line">9.将版本库中的文件推送到远程仓库：```git push origin master</span><br></pre></td></tr></table></figure></p>
-<p><strong><em>(到这里，你基本上就可以实现项目推送到github平台上了)</em></strong>;</p>
+<h1 id="怎么将项目推送到github（基本项目发布操作）"><a href="#怎么将项目推送到github（基本项目发布操作）" class="headerlink" title="怎么将项目推送到github（基本项目发布操作）"></a>怎么将项目推送到github（基本项目发布操作）</h1><p>1.在你的github网站中新建一个仓库（Repositories），填写相关数据；<br>2.复制仓库地址，选择HTTPS,例如:<a href="https://github.com/chengpingping/github.git；" target="_blank" rel="noopener">https://github.com/chengpingping/github.git；</a><br>3.在你已经创建的项目目录下，在路径栏中输入:<code>cmd</code>，进入dos界面;<br>4.首先，你有创建一个git的版本，在dos框中输入：<code>git init</code>;<br>5.此时你可以查看工作区有没有新的文件，也就是可以推送的文件：<code>git statue</code>;<br>6.添加你要推送的项目到暂存区:有两种方法;<br>    添加某个文件：<code>git add 文件名</code>;<br>    添加所有文件：<code>git add .</code>;<br>7.将暂存区的文件提交到版本记录中：<code>git  commit -m &quot;提示信息&quot;</code>;<br>8.连接你在开头建好的仓库：<code>git remote add origin 仓库地址</code>;<br>9.将版本库中的文件推送到远程仓库：<code>git push origin master</code>;<br><strong><em>(到这里，你基本上就可以将项目推送到github平台上了)</em></strong>;</p>
 <h1 id="基本操作（比较详细）"><a href="#基本操作（比较详细）" class="headerlink" title="基本操作（比较详细）"></a>基本操作（比较详细）</h1><h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><pre><code>git init</code></pre><p>生成.git目录</p>
 <h2 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h2><pre><code>git add 文件或目录
-git commit -m &apos;文件说明信息&apos;</code></pre><h2 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h2><pre><code>git log</code></pre><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><pre><code>git reset --hard HEAD^</code></pre><p>HEAD指向当前版本<br>    git resert –hard 版本序列号</p>
-<h2 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h2><pre><code>git reflog</code></pre><h2 id="工作区、版本库和暂存区"><a href="#工作区、版本库和暂存区" class="headerlink" title="工作区、版本库和暂存区"></a>工作区、版本库和暂存区</h2><p>编辑文件都是在工作区<br>    git add 是把工作区的修改放入暂存区<br>    git commit 是把暂存的区修改一次性做一次版本记录</p>
-<h2 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h2><pre><code>git commit 只会把暂存区的修改提交到版本记录中</code></pre><h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p>1.直接丢弃工作区的改动<br>    git checkout –文件<br>2.修改已经添加到暂存区，但未commit<br>    a. git resert HEAD 文件<br>    b. git checkout –文件<br>3.已经commit<br>    使用版本回退操作</p>
-<h2 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h2><p>对比工作区和版本库某个文件<br>    git diff HEAD –文件<br>对比两个版本中的文件<br>    git diff HEAD HEAD^ –code.txt</p>
-<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><pre><code>rm 文件
+git commit -m &apos;文件说明信息&apos;</code></pre><h2 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h2><pre><code>git log</code></pre><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><pre><code>git reset --hard HEAD^
+
+git resert --hard 版本序列号</code></pre><p><strong><em>HEAD：指向当前版本</em></strong></p>
+<h2 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h2><pre><code>git reflog</code></pre><h2 id="工作区、版本库和暂存区"><a href="#工作区、版本库和暂存区" class="headerlink" title="工作区、版本库和暂存区"></a>工作区、版本库和暂存区</h2><p>编辑文件都是在工作区</p>
+<p><code>git add</code>是把工作区的修改放入暂存区；<br><code>git commit</code>是把暂存的区修改一次性做一次版本记录。</p>
+<h2 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h2><p><code>git commit</code>只会把暂存区的修改提交到版本记录中。</p>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p>1.直接丢弃工作区的改动:</p>
+<pre><code>git checkout --文件</code></pre><p>2.修改已经添加到暂存区，但未commit:</p>
+<pre><code>a. git resert HEAD 文件
+b. git checkout --文件</code></pre><p>3.已经commit<br>    <strong><em>使用版本回退操作</em></strong></p>
+<h2 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h2><p>对比工作区和版本库某个文件</p>
+<pre><code>git diff HEAD --文件</code></pre><p>对比两个版本中的文件</p>
+<pre><code>git diff HEAD HEAD^ --code.txt</code></pre><h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><pre><code>rm 文件
 
 git rm 文件
 
-git commit</code></pre><h1 id="GitHub网站的使用"><a href="#GitHub网站的使用" class="headerlink" title="GitHub网站的使用"></a>GitHub网站的使用</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><pre><code>new repository</code></pre><h2 id="添加ssh账户"><a href="#添加ssh账户" class="headerlink" title="添加ssh账户"></a>添加ssh账户</h2><p>1.点击头像——&gt;settings——&gt;ssh<br>2.生成电脑的ssh公钥<br>查看<br>    vi .gitconfig<br>ssh<br>    ssh-keygen -t rsa -C ‘邮箱‘<br>    在.ssh下的id_rsa.pub文件中是新生程的密钥，加入到GitHub中</p>
-<h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><pre><code>git clone ssh地址</code></pre><h2 id="推送代码"><a href="#推送代码" class="headerlink" title="推送代码"></a>推送代码</h2><pre><code>git push origin 分支名称</code></pre><h2 id="跟踪远程"><a href="#跟踪远程" class="headerlink" title="跟踪远程"></a>跟踪远程</h2><pre><code>git branch --set-upstream-to=origin/分支 分支</code></pre><h2 id="拉取代码"><a href="#拉取代码" class="headerlink" title="拉取代码"></a>拉取代码</h2><pre><code>git pull origin 分支</code></pre><h1 id="分支的管理"><a href="#分支的管理" class="headerlink" title="分支的管理"></a>分支的管理</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>1.查看分支<br>    git branch<br>2.创建分支<br>    git branch <name><br>4.切换分支<br>    git checkout <name><br>5.创建切换分支<br>    git checkout -b <name><br>6.合并某分支到当前分支<br>    git merge <name><br>禁用快速合并<br>    git merge –no-ff <name><br>8.删除分支<br>        git branch -d <name></name></name></name></name></name></name></p>
-<h2 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h2><pre><code>分支有了新的记录并且修改的是同一个文件</code></pre><h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><p>1.合并的适合如果可以使用快速合并<br>2.禁止快速合并<br>    –no-ff</p>
+git commit</code></pre><h1 id="GitHub网站的使用"><a href="#GitHub网站的使用" class="headerlink" title="GitHub网站的使用"></a>GitHub网站的使用</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><pre><code>new repository</code></pre><h2 id="添加ssh账户"><a href="#添加ssh账户" class="headerlink" title="添加ssh账户"></a>添加ssh账户</h2><p>1.点击头像——&gt;settings——&gt;ssh<br>2.生成电脑的ssh公钥<br>查看</p>
+<pre><code>vi .gitconfig</code></pre><p>ssh</p>
+<pre><code>ssh-keygen -t rsa -C &apos;邮箱‘
+在.ssh下的id_rsa.pub文件中是新生程的密钥，加入到GitHub中</code></pre><h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><pre><code>git clone ssh地址</code></pre><h2 id="推送代码"><a href="#推送代码" class="headerlink" title="推送代码"></a>推送代码</h2><pre><code>git push origin 分支名称</code></pre><h2 id="跟踪远程"><a href="#跟踪远程" class="headerlink" title="跟踪远程"></a>跟踪远程</h2><pre><code>git branch --set-upstream-to=origin/分支 分支</code></pre><h2 id="拉取代码"><a href="#拉取代码" class="headerlink" title="拉取代码"></a>拉取代码</h2><pre><code>git pull origin 分支</code></pre><h1 id="分支的管理"><a href="#分支的管理" class="headerlink" title="分支的管理"></a>分支的管理</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>1.查看分支</p>
+<pre><code>git branch</code></pre><p>2.创建分支</p>
+<pre><code>git branch &lt;name&gt;</code></pre><p>4.切换分支</p>
+<pre><code>git checkout &lt;name&gt;</code></pre><p>5.创建切换分支</p>
+<pre><code>git checkout -b &lt;name&gt;</code></pre><p>6.合并某分支到当前分支</p>
+<pre><code>git merge &lt;name&gt;</code></pre><p>禁用快速合并</p>
+<pre><code>git merge --no-ff &lt;name&gt;</code></pre><p>8.删除分支</p>
+<pre><code>git branch -d &lt;name&gt;</code></pre><h2 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h2><pre><code>分支有了新的记录并且修改的是同一个文件</code></pre><h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><p>1.合并的适合如果可以使用快速合并;<br>2.禁止快速合并<code>--no-ff</code>.</p>
 <h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><p>1.git stash<br>2.切换到bug所在分支，并创建切换到一个临时分支，修复bug<br>3.修复完bug之后，切换回bug所在的分支并合并临时分支的内容，合并使用no-ff模式<br>4.删除临时分支<br>5.切换回工作分支<br>6.git stash pop</p>
 <p><strong><em>Master:用于保存发布的项目代码</em></strong><br><strong><em>Dev:保存开发过程中的代码</em></strong></p>
 
