@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="5.4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。 主要的危害1.盗取用户的账号2.控制企业数据：读取、篡改、添加、删除3.盗取企业重要">
+  <meta name="description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="5.4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。 主要的危害1.盗取用户的账号2.控制企业数据：读取、篡改、添加、删除3.盗取企业重要">
+<meta property="og:description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-12T08:18:44.860Z">
+<meta property="og:updated_time" content="2019-09-12T09:06:12.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试">
-<meta name="twitter:description" content="5.4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。 主要的危害1.盗取用户的账号2.控制企业数据：读取、篡改、添加、删除3.盗取企业重要">
+<meta name="twitter:description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -167,12 +167,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
+        <h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
 <h2 id="什么是xss"><a href="#什么是xss" class="headerlink" title="什么是xss"></a>什么是xss</h2><p>1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss<br>2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。</p>
+<a id="more"></a>
+
 <h2 id="主要的危害"><a href="#主要的危害" class="headerlink" title="主要的危害"></a>主要的危害</h2><p>1.盗取用户的账号<br>2.控制企业数据：读取、篡改、添加、删除<br>3.盗取企业重要的具有价值的资料<br>4.非法转账<br>5.强制发送邮件<br>6.网站挂马<br>7.控制受害者网站向其他网站发起攻击</p>
 <h2 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h2><p>1.反射型，也叫非持久型<br>    反射型xss代码首先出现在url中，然后服务端解析，最后浏览器解析后xss代码才能够攻击。</p>
 <p>2.存储型，也叫持久型<br>    主要是将xss代码发送到服务器，然后下一次请求的时候就不用带上xss代码了。<br>    常用来窃取用户信息<br><strong>典型的例子：</strong><br>    1.留言板xss。恶意用户留言的是js脚本，当留言被别人查看时，会被浏览器解析出来。<br>    2.利用存储型的xss生成一些图片和文字，当其他用户去点击的时候就被xss攻击了，你的信息会被窃取或者被诱导至一个钓鱼网站。<br>    3.劫持流量恶意跳转，用户打开网站之后会默认跳到指定网站。</p>
-<h2 id="防范手段"><a href="#防范手段" class="headerlink" title="防范手段"></a>防范手段</h2><p>1.入参字符过滤<br>    在源头上讲不合法的东西过滤掉，从而保证安全性。比如：移除用户提交的DOM属性，如onerror；移除用户上传的Style节点，如<iframe>、<script>、<a>等。<br>2.出参进行编码<br>    如果源头没有控制好，就要在后期将一些常见的符号进行编码，如尖括号中在输出时用'&lt'和'&gt'来替换；<br>3.入参长度限制<br>    通过上面的例子可以看出xss攻击往往需要较长的字符串才能实现，因此可以限制一些可以输入长度来进行防御。<br>4.设置cookie httponly为true<br>    Cookie由服务端来写并将httpOnly设置成为“true”，Cookie中设置了"HttpOnly"属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。</p>
+<h2 id="防范手段"><a href="#防范手段" class="headerlink" title="防范手段"></a>防范手段</h2><p>1.入参字符过滤<br>    在源头上讲不合法的东西过滤掉，从而保证安全性。比如：移除用户提交的DOM属性，如onerror；移除用户上传的Style节点，如&lt;iframe&gt;、&lt;script&gt;、&lt;a&gt;等。<br>2.出参进行编码<br>    如果源头没有控制好，就要在后期将一些常见的符号进行编码，如&lt;&gt;用’&amp;lt’和’&amp;gt’来替换；<br>3.入参长度限制<br>    通过上面的例子可以看出xss攻击往往需要较长的字符串才能实现，因此可以限制一些可以输入长度来进行防御。<br>4.设置cookie httponly为true<br>    Cookie由服务端来写并将httpOnly设置成为“true”，Cookie中设置了”HttpOnly”属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。</p>
 <h1 id="3-数据结构"><a href="#3-数据结构" class="headerlink" title="3.数据结构"></a>3.数据结构</h1><h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p>顺序线性表：<br>    数组：<br>    1.访问快，时间复杂度O(1)<br>链式线性表：</p>
 <h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>栈</p>
 <p>队列</p>
@@ -186,7 +188,7 @@
 <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><h2 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h2><h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><h1 id="2-算法"><a href="#2-算法" class="headerlink" title="2.算法"></a>2.算法</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>从排序前后位置是否变化分为：稳定和不稳定。<br>根据排序时是否需要将数据全部加载到内存分为：内排和外排。</p>
 <h3 id="冒泡排序（稳定，内排）"><a href="#冒泡排序（稳定，内排）" class="headerlink" title="冒泡排序（稳定，内排）"></a>冒泡排序（稳定，内排）</h3><h3 id="选择排序（不稳定，内排）"><a href="#选择排序（不稳定，内排）" class="headerlink" title="选择排序（不稳定，内排）"></a>选择排序（不稳定，内排）</h3><h3 id="插入排序（稳定，内排）"><a href="#插入排序（稳定，内排）" class="headerlink" title="插入排序（稳定，内排）"></a>插入排序（稳定，内排）</h3><h3 id="希尔排序（不稳定，内排）"><a href="#希尔排序（不稳定，内排）" class="headerlink" title="希尔排序（不稳定，内排）"></a>希尔排序（不稳定，内排）</h3><h3 id="堆排序（不稳定，内排）"><a href="#堆排序（不稳定，内排）" class="headerlink" title="堆排序（不稳定，内排）"></a>堆排序（不稳定，内排）</h3><h3 id="快速排序（不稳定，内排）"><a href="#快速排序（不稳定，内排）" class="headerlink" title="快速排序（不稳定，内排）"></a>快速排序（不稳定，内排）</h3><h3 id="归并排序（稳定，外排）"><a href="#归并排序（稳定，外排）" class="headerlink" title="归并排序（稳定，外排）"></a>归并排序（稳定，外排）</h3><h3 id="计数排序（稳定，外排）"><a href="#计数排序（稳定，外排）" class="headerlink" title="计数排序（稳定，外排）"></a>计数排序（稳定，外排）</h3><h3 id="桶排序（稳定，外排）"><a href="#桶排序（稳定，外排）" class="headerlink" title="桶排序（稳定，外排）"></a>桶排序（稳定，外排）</h3><h3 id="基数排序（稳定，外排）"><a href="#基数排序（稳定，外排）" class="headerlink" title="基数排序（稳定，外排）"></a>基数排序（稳定，外排）</h3><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><h1 id="1-其他"><a href="#1-其他" class="headerlink" title="1.其他"></a>1.其他</h1><p>tcp三次握手和四次挥手</p>
 <p>编译语言和脚本语言的区别：<br>    脚本语言介于标记语言和编译语言之间，没有复杂严谨的语法和规则。<br>    脚本语言是解释型语言，比如：Python、JavaScript；脚本语言不需要编译，直接用解释器解释。<br>    编译语言需要编译器编译成二进制文件，生成可执行的文件，才能运行程序。<br>    编译语言编译后，再次运行，直接运行编译结果。修改时需要在源码上修改，再次编译。<br>    脚本语言更抽象，存在高级数据结构：列表、字典。编译语言需要明确的定义。<br>    脚本语言不需要类型声明，编译语言是强类型定义或静态定义。<br>    编译语言程序执行的速度比解释语言快。<br>静态链接库和动态链接库的区别：<br>    lib包含函数所在的DLL文件和文件中函数位置信息（入口），代码由运行时加载进程空间中的DLL提供，称为动态链接库：dynamic link library<br>    lib包含函数代码本身，编译时直接将代码加入程序当中，称为静态链接库：static link library。</p>
-</script></iframe></p>
+
       
 
       

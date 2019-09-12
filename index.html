@@ -170,39 +170,9 @@
       
         <h1 id="什么是GitHub"><a href="#什么是GitHub" class="headerlink" title="什么是GitHub"></a>什么是GitHub</h1><p>github是一个面向开源及私有的软件项目托管平台，只支持git作为唯一的版本库进行托管。<br>之前使用hexo的框架为自己搭建了这个博客，使用GitHub托管了这个项目，使得别人能够访问到自己的博客。</p>
 <h2 id="分布式管理系统"><a href="#分布式管理系统" class="headerlink" title="分布式管理系统"></a>分布式管理系统</h2><p>集中式和分布式的区别：集中式中央服务器挂掉不能工作，分布式没有影响<br>之前使用过SVN就是集中式版本管理系统。</p>
-<h1 id="怎么将项目推送到github（基本项目发布操作）"><a href="#怎么将项目推送到github（基本项目发布操作）" class="headerlink" title="怎么将项目推送到github（基本项目发布操作）"></a>怎么将项目推送到github（基本项目发布操作）</h1><p>1.在你的github网站中新建一个仓库（Repositories），填写相关数据；<br>2.复制仓库地址，选择HTTPS,例如:<a href="https://github.com/chengpingping/github.git；" target="_blank" rel="noopener">https://github.com/chengpingping/github.git；</a><br>3.在你已经创建的项目目录下，在路径栏中输入:<code>cmd</code>，进入dos界面;<br>4.首先，你有创建一个git的版本，在dos框中输入：<code>git init</code>;<br>5.此时你可以查看工作区有没有新的文件，也就是可以推送的文件：<code>git statue</code>;<br>6.添加你要推送的项目到暂存区:有两种方法;<br>    添加某个文件：<code>git add 文件名</code>;<br>    添加所有文件：<code>git add .</code>;<br>7.将暂存区的文件提交到版本记录中：<code>git  commit -m &quot;提示信息&quot;</code>;<br>8.连接你在开头建好的仓库：<code>git remote add origin 仓库地址</code>;<br>9.将版本库中的文件推送到远程仓库：<code>git push origin master</code>;<br><strong><em>(到这里，你基本上就可以将项目推送到github平台上了)</em></strong>;</p>
-<h1 id="基本操作（比较详细）"><a href="#基本操作（比较详细）" class="headerlink" title="基本操作（比较详细）"></a>基本操作（比较详细）</h1><h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><pre><code>git init</code></pre><p>生成.git目录</p>
-<h2 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h2><pre><code>git add 文件或目录
-git commit -m &apos;文件说明信息&apos;</code></pre><h2 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h2><pre><code>git log</code></pre><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><pre><code>git reset --hard HEAD^
-
-git resert --hard 版本序列号</code></pre><p><strong><em>HEAD：指向当前版本</em></strong></p>
-<h2 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h2><pre><code>git reflog</code></pre><h2 id="工作区、版本库和暂存区"><a href="#工作区、版本库和暂存区" class="headerlink" title="工作区、版本库和暂存区"></a>工作区、版本库和暂存区</h2><p>编辑文件都是在工作区</p>
-<p><code>git add</code>是把工作区的修改放入暂存区；<br><code>git commit</code>是把暂存的区修改一次性做一次版本记录。</p>
-<h2 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h2><p><code>git commit</code>只会把暂存区的修改提交到版本记录中。</p>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p>1.直接丢弃工作区的改动:</p>
-<pre><code>git checkout --文件</code></pre><p>2.修改已经添加到暂存区，但未commit:</p>
-<pre><code>a. git resert HEAD 文件
-b. git checkout --文件</code></pre><p>3.已经commit<br>    <strong><em>使用版本回退操作</em></strong></p>
-<h2 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h2><p>对比工作区和版本库某个文件</p>
-<pre><code>git diff HEAD --文件</code></pre><p>对比两个版本中的文件</p>
-<pre><code>git diff HEAD HEAD^ --code.txt</code></pre><h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><pre><code>rm 文件
-
-git rm 文件
-
-git commit</code></pre><h1 id="GitHub网站的使用"><a href="#GitHub网站的使用" class="headerlink" title="GitHub网站的使用"></a>GitHub网站的使用</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><pre><code>new repository</code></pre><h2 id="添加ssh账户"><a href="#添加ssh账户" class="headerlink" title="添加ssh账户"></a>添加ssh账户</h2><p>1.点击头像——&gt;settings——&gt;ssh<br>2.生成电脑的ssh公钥<br>查看</p>
-<pre><code>vi .gitconfig</code></pre><p>ssh</p>
-<pre><code>ssh-keygen -t rsa -C &apos;邮箱‘
-在.ssh下的id_rsa.pub文件中是新生程的密钥，加入到GitHub中</code></pre><h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><pre><code>git clone ssh地址</code></pre><h2 id="推送代码"><a href="#推送代码" class="headerlink" title="推送代码"></a>推送代码</h2><pre><code>git push origin 分支名称</code></pre><h2 id="跟踪远程"><a href="#跟踪远程" class="headerlink" title="跟踪远程"></a>跟踪远程</h2><pre><code>git branch --set-upstream-to=origin/分支 分支</code></pre><h2 id="拉取代码"><a href="#拉取代码" class="headerlink" title="拉取代码"></a>拉取代码</h2><pre><code>git pull origin 分支</code></pre><h1 id="分支的管理"><a href="#分支的管理" class="headerlink" title="分支的管理"></a>分支的管理</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>1.查看分支</p>
-<pre><code>git branch</code></pre><p>2.创建分支</p>
-<pre><code>git branch &lt;name&gt;</code></pre><p>4.切换分支</p>
-<pre><code>git checkout &lt;name&gt;</code></pre><p>5.创建切换分支</p>
-<pre><code>git checkout -b &lt;name&gt;</code></pre><p>6.合并某分支到当前分支</p>
-<pre><code>git merge &lt;name&gt;</code></pre><p>禁用快速合并</p>
-<pre><code>git merge --no-ff &lt;name&gt;</code></pre><p>8.删除分支</p>
-<pre><code>git branch -d &lt;name&gt;</code></pre><h2 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h2><pre><code>分支有了新的记录并且修改的是同一个文件</code></pre><h2 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h2><p>1.合并的适合如果可以使用快速合并;<br>2.禁止快速合并<code>--no-ff</code>.</p>
-<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><p>1.git stash<br>2.切换到bug所在分支，并创建切换到一个临时分支，修复bug<br>3.修复完bug之后，切换回bug所在的分支并合并临时分支的内容，合并使用no-ff模式<br>4.删除临时分支<br>5.切换回工作分支<br>6.git stash pop</p>
-<p><strong><em>Master:用于保存发布的项目代码</em></strong><br><strong><em>Dev:保存开发过程中的代码</em></strong></p>
-
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/09/10/github的使用/#more">more >></a>
+        
       
 
       
@@ -264,26 +234,11 @@ git commit</code></pre><h1 id="GitHub网站的使用"><a href="#GitHub网站的�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
+        <h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
 <h2 id="什么是xss"><a href="#什么是xss" class="headerlink" title="什么是xss"></a>什么是xss</h2><p>1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss<br>2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。</p>
-<h2 id="主要的危害"><a href="#主要的危害" class="headerlink" title="主要的危害"></a>主要的危害</h2><p>1.盗取用户的账号<br>2.控制企业数据：读取、篡改、添加、删除<br>3.盗取企业重要的具有价值的资料<br>4.非法转账<br>5.强制发送邮件<br>6.网站挂马<br>7.控制受害者网站向其他网站发起攻击</p>
-<h2 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h2><p>1.反射型，也叫非持久型<br>    反射型xss代码首先出现在url中，然后服务端解析，最后浏览器解析后xss代码才能够攻击。</p>
-<p>2.存储型，也叫持久型<br>    主要是将xss代码发送到服务器，然后下一次请求的时候就不用带上xss代码了。<br>    常用来窃取用户信息<br><strong>典型的例子：</strong><br>    1.留言板xss。恶意用户留言的是js脚本，当留言被别人查看时，会被浏览器解析出来。<br>    2.利用存储型的xss生成一些图片和文字，当其他用户去点击的时候就被xss攻击了，你的信息会被窃取或者被诱导至一个钓鱼网站。<br>    3.劫持流量恶意跳转，用户打开网站之后会默认跳到指定网站。</p>
-<h2 id="防范手段"><a href="#防范手段" class="headerlink" title="防范手段"></a>防范手段</h2><p>1.入参字符过滤<br>    在源头上讲不合法的东西过滤掉，从而保证安全性。比如：移除用户提交的DOM属性，如onerror；移除用户上传的Style节点，如<iframe>、<script>、<a>等。<br>2.出参进行编码<br>    如果源头没有控制好，就要在后期将一些常见的符号进行编码，如尖括号中在输出时用'&lt'和'&gt'来替换；<br>3.入参长度限制<br>    通过上面的例子可以看出xss攻击往往需要较长的字符串才能实现，因此可以限制一些可以输入长度来进行防御。<br>4.设置cookie httponly为true<br>    Cookie由服务端来写并将httpOnly设置成为“true”，Cookie中设置了"HttpOnly"属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。</p>
-<h1 id="3-数据结构"><a href="#3-数据结构" class="headerlink" title="3.数据结构"></a>3.数据结构</h1><h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p>顺序线性表：<br>    数组：<br>    1.访问快，时间复杂度O(1)<br>链式线性表：</p>
-<h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>栈</p>
-<p>队列</p>
-<h3 id="串"><a href="#串" class="headerlink" title="串"></a>串</h3><p>存储</p>
-<p>匹配</p>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>特征</p>
-<p>存储结构</p>
-<p>二叉树</p>
-<p>树、森林、二叉树的转换（兄弟孩子法）</p>
-<p>赫夫曼树</p>
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><h2 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h2><h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><h1 id="2-算法"><a href="#2-算法" class="headerlink" title="2.算法"></a>2.算法</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>从排序前后位置是否变化分为：稳定和不稳定。<br>根据排序时是否需要将数据全部加载到内存分为：内排和外排。</p>
-<h3 id="冒泡排序（稳定，内排）"><a href="#冒泡排序（稳定，内排）" class="headerlink" title="冒泡排序（稳定，内排）"></a>冒泡排序（稳定，内排）</h3><h3 id="选择排序（不稳定，内排）"><a href="#选择排序（不稳定，内排）" class="headerlink" title="选择排序（不稳定，内排）"></a>选择排序（不稳定，内排）</h3><h3 id="插入排序（稳定，内排）"><a href="#插入排序（稳定，内排）" class="headerlink" title="插入排序（稳定，内排）"></a>插入排序（稳定，内排）</h3><h3 id="希尔排序（不稳定，内排）"><a href="#希尔排序（不稳定，内排）" class="headerlink" title="希尔排序（不稳定，内排）"></a>希尔排序（不稳定，内排）</h3><h3 id="堆排序（不稳定，内排）"><a href="#堆排序（不稳定，内排）" class="headerlink" title="堆排序（不稳定，内排）"></a>堆排序（不稳定，内排）</h3><h3 id="快速排序（不稳定，内排）"><a href="#快速排序（不稳定，内排）" class="headerlink" title="快速排序（不稳定，内排）"></a>快速排序（不稳定，内排）</h3><h3 id="归并排序（稳定，外排）"><a href="#归并排序（稳定，外排）" class="headerlink" title="归并排序（稳定，外排）"></a>归并排序（稳定，外排）</h3><h3 id="计数排序（稳定，外排）"><a href="#计数排序（稳定，外排）" class="headerlink" title="计数排序（稳定，外排）"></a>计数排序（稳定，外排）</h3><h3 id="桶排序（稳定，外排）"><a href="#桶排序（稳定，外排）" class="headerlink" title="桶排序（稳定，外排）"></a>桶排序（稳定，外排）</h3><h3 id="基数排序（稳定，外排）"><a href="#基数排序（稳定，外排）" class="headerlink" title="基数排序（稳定，外排）"></a>基数排序（稳定，外排）</h3><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><h1 id="1-其他"><a href="#1-其他" class="headerlink" title="1.其他"></a>1.其他</h1><p>tcp三次握手和四次挥手</p>
-<p>编译语言和脚本语言的区别：<br>    脚本语言介于标记语言和编译语言之间，没有复杂严谨的语法和规则。<br>    脚本语言是解释型语言，比如：Python、JavaScript；脚本语言不需要编译，直接用解释器解释。<br>    编译语言需要编译器编译成二进制文件，生成可执行的文件，才能运行程序。<br>    编译语言编译后，再次运行，直接运行编译结果。修改时需要在源码上修改，再次编译。<br>    脚本语言更抽象，存在高级数据结构：列表、字典。编译语言需要明确的定义。<br>    脚本语言不需要类型声明，编译语言是强类型定义或静态定义。<br>    编译语言程序执行的速度比解释语言快。<br>静态链接库和动态链接库的区别：<br>    lib包含函数所在的DLL文件和文件中函数位置信息（入口），代码由运行时加载进程空间中的DLL提供，称为动态链接库：dynamic link library<br>    lib包含函数代码本身，编译时直接将代码加入程序当中，称为静态链接库：static link library。</p>
-</script></iframe></p>
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/09/06/笔试/#more">more >></a>
+        
       
 
       
@@ -346,15 +301,9 @@ git commit</code></pre><h1 id="GitHub网站的使用"><a href="#GitHub网站的�
     <div class="article-entry" itemprop="articleBody">
       
         <p>hexo是一个博客框架，使用Markdown语法编写内容，在官方网站中提供了很多的主题，可以美化你的博客界面。<br>官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> （中文）</p>
-<h1 id="安装Git和Node-js"><a href="#安装Git和Node-js" class="headerlink" title="安装Git和Node.js"></a>安装Git和Node.js</h1><p>Git和nodejs为hexo框架提供环境<br>Git下载地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a><br>NodeJS下载地址：<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a><br>根据自己电脑情况，下载对应的版本。安装步骤简单，没有什么特别的注意事项，如果不想安装到C盘可以换到其他盘！<br>检查是否安装成功：<br>打开dos界面：win+R/直接搜索‘DOS’或者‘命令’<br><img src="../img/Git%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="alt Git安装成功"><br><img src="../img/nodejs%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="alt nodejs安装成功"><br>Git安装成功后，鼠标右键会有Git GUI Here和Git Bash Here两个选项</p>
-<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><p>右键–&gt;点击Git Bash Here，会弹出一个窗口，然后输入:<code>npm install -g hexo-cli</code>，等待一会。。。</p>
-<h1 id="开始新建自己的博客"><a href="#开始新建自己的博客" class="headerlink" title="开始新建自己的博客"></a>开始新建自己的博客</h1><p>1.hexo安装成功后，选择/新建一个自己放博客项目的文件夹；<br>2.右键右键–&gt;点击Git Bash Here，输入：<code>hexo init</code>(初始化自己的环境)，可能会等待一会儿，也可能会失败（外网），成功后会在当前目录下会出现一些文件和文件夹；<br>3.输入：<code>hexo generate/hexo g</code>(生成静态界面)<br>4.输入：<code>hexo server/hexo s</code>(启动本地服务器)，此时你就可去访问你的第一个博客网站了：浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ；<br>5.输入：<code>hexo new （这里输本篇博客的名字）</code>，新建自己的博客内容，会在：当前目录\source_posts 目录下生成一个后缀为.md的文件（Markdown文件）<br>6.编辑文件，可以用任意的文件编辑器编辑文档内容，比如：VSCode。Markdown是一种轻量级语言， 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。Markdown教程：<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/markdown/md-tutorial.html</a><br>7.保存文档刷新页面，你就可以看见自己的博客内容。</p>
-<h1 id="将自己的博客发布到云服务器上"><a href="#将自己的博客发布到云服务器上" class="headerlink" title="将自己的博客发布到云服务器上"></a>将自己的博客发布到云服务器上</h1><p>github是一个基于git的代码托管平台，付费用户可以建私人仓库，我们一般的免费用户只能使用公共仓库，也就是代码要公开，对于学习者这就够了。放在托管平台上的好处是任何人都可以通过网络访问到你的网站。</p>
-<h2 id="在GitHub上申请一个账号"><a href="#在GitHub上申请一个账号" class="headerlink" title="在GitHub上申请一个账号"></a>在GitHub上申请一个账号</h2><p>官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>注册成功登陆以后，你就可以新建一个仓库：Create a New Repository。（填上所有信息点击creat）<br><strong><em>注意命名：</em></strong>GitHub账户名.github.io（严格按照此格式）</p>
-<h2 id="将自己的博客发布到GitHub上"><a href="#将自己的博客发布到GitHub上" class="headerlink" title="将自己的博客发布到GitHub上"></a>将自己的博客发布到GitHub上</h2><p>在项目法人更目录下有一个_config.yml文件,修改Deployment下面的repo:<a href="https://GitHub账户名.github.io" target="_blank" rel="noopener">https://GitHub账户名.github.io</a> (这里填仓库地址)<br><img src="e:/hexo/blog/public/img/%E4%BF%AE%E6%94%B9config%E6%96%87%E4%BB%B6.png" alt="alt 修改config文件"></p>
-<h2 id="上传代码到GitHub"><a href="#上传代码到GitHub" class="headerlink" title="上传代码到GitHub"></a>上传代码到GitHub</h2><p>1.安装：在Git窗口中输入 <code>npm install hexo-deployer-git –save</code><br>2.执行<code>hexo deploy/hexo d</code>(输入自己的GitHub账号和密码)，你可以看见你的文件正在上传。<br>3.访问自己的仓库，浏览器中输入： <a href="https://GitHub账户名.github.io，就可成功访问自己的博客了。" target="_blank" rel="noopener">https://GitHub账户名.github.io，就可成功访问自己的博客了。</a></p>
-<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>找到你喜欢的主题<code>git clone 主题的github地址</code>到你的博客目录下的theme（主题）目录中；<br>在博客主目录下找到<code>_config.yml</code>文件，修改<code>theme: 主题文件名称</code>；<br>对照相应主题修改其他相应配置，就Ok了~</p>
-
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/07/11/hexo环境搭建和项目新建/#more">more >></a>
+        
       
 
       
