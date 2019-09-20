@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
+  <meta name="description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callback的形式实现跨域访问 创">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
+<meta property="og:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callback的形式实现跨域访问 创">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-12T09:06:12.792Z">
+<meta property="og:updated_time" content="2019-09-20T09:43:38.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试">
-<meta name="twitter:description" content="4.xss(cross site scripting)跨站脚本攻击（我在笔试遇到两次） 什么是xss1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。">
+<meta name="twitter:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callback的形式实现跨域访问 创">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -167,14 +167,128 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
-<h2 id="什么是xss"><a href="#什么是xss" class="headerlink" title="什么是xss"></a>什么是xss</h2><p>1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss<br>2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。</p>
+        <h1 id="JSONP的实现原理-不太懂"><a href="#JSONP的实现原理-不太懂" class="headerlink" title="JSONP的实现原理(不太懂)"></a>JSONP的实现原理(不太懂)</h1><pre><code>JSONP=JSON+Padding(填充)
+JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以<script>标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
+<p><strong>JSONP是通过Javascript callback的形式实现跨域访问</strong></p>
+<p>创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</p>
+<p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
+<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html">来源</a></p>
 <a id="more"></a>
-
-<h2 id="主要的危害"><a href="#主要的危害" class="headerlink" title="主要的危害"></a>主要的危害</h2><p>1.盗取用户的账号<br>2.控制企业数据：读取、篡改、添加、删除<br>3.盗取企业重要的具有价值的资料<br>4.非法转账<br>5.强制发送邮件<br>6.网站挂马<br>7.控制受害者网站向其他网站发起攻击</p>
+<h1 id="css中哪些属性不具有继承性"><a href="#css中哪些属性不具有继承性" class="headerlink" title="css中哪些属性不具有继承性"></a>css中哪些属性不具有继承性</h1><h2 id="无继承性的属性"><a href="#无继承性的属性" class="headerlink" title="无继承性的属性"></a>无继承性的属性</h2><p><strong>无继承性是指后面的的属性设置不会继承前面的属性设置，会将原来设置的属性参数覆盖掉</strong></p>
+<p>1.display：规定元素生成框的类型</p>
+<p>2.文本属性：</p>
+<pre><code>vertical-align:垂直文本对齐
+text-decoration：规定添加文本的装饰
+text-shadow：文本阴影效果（**好像可以继承？？？**）
+white-space：空白符处理
+unicode-bidi：设置文本方向</code></pre><p>3.盒子模型的属性:</p>
+<pre><code>width、height、margin 、margin-top、margin-right、margin-bottom、
+margin-left、border、border-style、border-top-style、border-right-style、
+border-bottom-style、border-left-style、border-width、border-top-width、
+border-right-right、border-bottom-width、border-left-width、border-color、
+border-top-color、border-right-color、border-bottom-color、border-left-color、
+border-top、border-right、border-bottom、border-left、padding、padding-top、
+padding-right、padding-bottom、padding-left</code></pre><p>4.背景属性：</p>
+<pre><code>background、background-color、background-image、background-repeat、
+background-position、background-attachment</code></pre><p>5.定位属性：</p>
+<pre><code>float、clear、position、top、right、bottom、left、min-width、
+min-height、max-width、max-height、overflow、clip、z-index</code></pre><p>6.生成内容属性：</p>
+<pre><code>content、counter-reset、counter-increment</code></pre><p>7.轮廓样式属性：</p>
+<pre><code>outline-style、outline-width、outline-color、outlin</code></pre><p>8.页面样式属性：</p>
+<pre><code>size、page-break-before、page-break-after</code></pre><p>9.声音样式属性：</p>
+<pre><code>pause-before、pause-after、pause、cue-before、cue-after、cue、play-during</code></pre><h2 id="具有继承性的属性"><a href="#具有继承性的属性" class="headerlink" title="具有继承性的属性"></a>具有继承性的属性</h2><p><strong>继承性是指元素的CSS属性在前面的设置会继承到后面的设置当中，这使得之前设置的属性值不会被覆盖</strong></p>
+<p>1.字体属性：</p>
+<pre><code>font:组合字体
+font-family:规定元素的字体
+font-weight：设置字体的粗细
+font-size：设置字体的大小
+font-style：定义字体的风格
+font-variant：小写字母转换为大写，但是会比其余的文本字体小
+font-stretch：对当前的font-family进行缩变
+font-size-adjust：为某个元素规定aspect值，保持首选字体的X-height</code></pre><p>2.文本系列：</p>
+<pre><code>text-indent：文本缩进
+text-align：文本水平对齐
+line-height：行高
+word-spacing：增加或减少单词间的空白（即字间隔）
+letter-spacing：增加或减少字符间的空白（字符间距）
+text-transform：控制文本大小写
+direction：规定文本的书写方向
+color:文字颜色</code></pre><p>3.元素可见性：</p>
+<pre><code>visibility</code></pre><p>4.表格布局属性：</p>
+<pre><code>caption-side、border-collapse、border-spacing、
+empty-cells、table-layout</code></pre><p>5.列表布局属性：</p>
+<pre><code>list-style-type、list-style-image、list-style-position、list-style</code></pre><p>6.生成内容属性：</p>
+<pre><code>quotes</code></pre><p>7.光标属性：</p>
+<pre><code>cursor</code></pre><p>8.页面样式属性：</p>
+<pre><code>page、page-break-inside、windows、orphans</code></pre><p>9.声音样式属性：</p>
+<pre><code>speak、speak-punctuation、speak-numeral、
+speak-header、speech-rate、volume、voice-family、
+pitch、pitch-range、stress、richness、、azimuth、elevation</code></pre><h2 id="所有元素课继承"><a href="#所有元素课继承" class="headerlink" title="所有元素课继承"></a>所有元素课继承</h2><p>1.元素可见性：visibility</p>
+<p>2.光标属性：cursor</p>
+<h2 id="内联元素可以继承的属性"><a href="#内联元素可以继承的属性" class="headerlink" title="内联元素可以继承的属性"></a>内联元素可以继承的属性</h2><p>1.字体属性</p>
+<p>2.除text-indent、text-align之外的文本系列属性</p>
+<h2 id="块级元素可继承属性"><a href="#块级元素可继承属性" class="headerlink" title="块级元素可继承属性"></a>块级元素可继承属性</h2><p>text-indent、text-align</p>
+<h1 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h1><p>vue有一个完整的生命周期：</p>
+<p>开始创建->初始化数据->编译模板->挂载DOM->渲染->更新->渲染、卸载</p>
+<p>new Vue():</p>
+<p>1.beforeCreate(创建前)</p>
+<p>实例刚被创建出来，还没有初始化好data和method；</p>
+<p>2.created(创建后)</p>
+<p>实例、data、methods都已经在内存中创建，但还没有编译模板</p>
+<p>3.beforeMount(渲染前)</p>
+<p>已经完成了模板的编译，但还为挂载到页面上</p>
+<p>4.mounted(渲染后)</p>
+<p>此时已经将编译好的模板挂载到页面指定的容器中显示</p>
+<p>5.beforeUpdate(更新前)</p>
+<p>还没开始重新渲染DOM节点，此时data中的值是新的但是页面中的值旧的</p>
+<p>6.updated(更新后)</p>
+<p>更新完毕调用次函数，此时data的值和页面上的值都是最新的数据，页面已经重新渲染完成</p>
+<p>7.beforeDestroy(销毁前)</p>
+<p>实例销毁之前调用，此时实例还可以使用</p>
+<p>8.destroyed(销毁后)</p>
+<p>Vue实例销毁后调用，调用后Vue实例的所有东西都会解绑，监听器也会被移除，所有的字实例也会被销毁</p>
+<h1 id="CSS文档流-待补充）"><a href="#CSS文档流-待补充）" class="headerlink" title="CSS文档流(待补充）"></a>CSS文档流(待补充）</h1><p>内联元素默认从左到右，遇到阻碍自动换行；</p>
+<p>块级元素独占一行，按从上到下的方式进行布局；</p>
+<h2 id="脱离文档流的方法"><a href="#脱离文档流的方法" class="headerlink" title="脱离文档流的方法"></a>脱离文档流的方法</h2><pre><code>position：absolute/fixed
+float:left</code></pre><h1 id="JS中6大数据类型和3大引用类型"><a href="#JS中6大数据类型和3大引用类型" class="headerlink" title="JS中6大数据类型和3大引用类型"></a>JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
+<pre><code>Number类型
+String类型
+Boolean类型
+Undefined类型
+Null类型
+Objective类型</code></pre><p>这种数据类型也称为原始数据类型，存储在<strong>栈内存（stack）</strong>中，占据的空间小，使用比较频繁；</p>
+<p>关于复制：系统会为新的变量在栈中分配一个新的内存区域。</p>
+<p><strong>三大引用类型</strong></p>
+<pre><code>Object类型
+Array类型
+Function类型</code></pre><p>这种数据存储在<strong>堆内存（heap）</strong>中，占据的空间大，大小不稳定；在栈中只存储一个地址来表示对堆内存的引用</p>
+<p>关于复制：系统也会为新的变量在栈中分配一个内存区域，但是它是用于存储地址的，所以指向以前在堆中的地址，如果你改变一个变量，另外一个也会改变</p>
+<h1 id="JS中new的作用"><a href="#JS中new的作用" class="headerlink" title="JS中new的作用"></a>JS中new的作用</h1><p>1.会创建一个新的对象</p>
+<p>2.会让this指向这个新的对象</p>
+<p>3.会执行构造函数中的代码：为这个新对象添加属性</p>
+<p>4.new会返回一个新对象</p>
+<h1 id="var、let、const的区别"><a href="#var、let、const的区别" class="headerlink" title="var、let、const的区别"></a>var、let、const的区别</h1><p>var是es3提出的变量，let和const是es6提出来的</p>
+<p>1.var声明的变量会挂载到window上，let和const不会</p>
+<p>2.var声明变量存在变量提升，let和const不存在</p>
+<p>3.let和const声明形成块作用域，而var不会</p>
+<p>4.在同一个作用域下let和const不能声明同名变量，而var可以</p>
+<p>5.缓存死区--在当前块作用域中存在a使用let/const声明的情况下，只会在当前作用域找变量a；而这时，还未到声明时候，所以控制台Error:a is not defined</p>
+<p>6.const一旦声明必须赋值（常量声明）,不能使用null占位。声明后不能再修改;如果声明的是复合类型数据，可以修改其属性</p>
+<hr>
+<h1 id="4-xss-cross-site-scripting-跨站脚本攻击"><a href="#4-xss-cross-site-scripting-跨站脚本攻击" class="headerlink" title="4.xss(cross site scripting)跨站脚本攻击"></a>4.xss(cross site scripting)跨站脚本攻击</h1><p><strong><em>（我在笔试遇到两次）</em></strong></p>
+<h2 id="什么是xss"><a href="#什么是xss" class="headerlink" title="什么是xss"></a>什么是xss</h2><p>1.是为了不和叠层样式表css（cascading style sheet)混淆，才缩写为xss</p>
+<p>2.xss是一种常见的web应用中的计算机安全漏洞，他允许恶意的web用户将代码植入到提供给其他用户使用的页面中。</p>
+<h2 id="主要的危害"><a href="#主要的危害" class="headerlink" title="主要的危害"></a>主要的危害</h2><p>1.盗取用户的账号</p>
+<p>2.控制企业数据：读取、篡改、添加、删除</p>
+<p>3.盗取企业重要的具有价值的资料</p>
+<p>4.非法转账</p>
+<p>5.强制发送邮件</p>
+<p>6.网站挂马</p>
+<p>7.控制受害者网站向其他网站发起攻击</p>
 <h2 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h2><p>1.反射型，也叫非持久型<br>    反射型xss代码首先出现在url中，然后服务端解析，最后浏览器解析后xss代码才能够攻击。</p>
 <p>2.存储型，也叫持久型<br>    主要是将xss代码发送到服务器，然后下一次请求的时候就不用带上xss代码了。<br>    常用来窃取用户信息<br><strong>典型的例子：</strong><br>    1.留言板xss。恶意用户留言的是js脚本，当留言被别人查看时，会被浏览器解析出来。<br>    2.利用存储型的xss生成一些图片和文字，当其他用户去点击的时候就被xss攻击了，你的信息会被窃取或者被诱导至一个钓鱼网站。<br>    3.劫持流量恶意跳转，用户打开网站之后会默认跳到指定网站。</p>
-<h2 id="防范手段"><a href="#防范手段" class="headerlink" title="防范手段"></a>防范手段</h2><p>1.入参字符过滤<br>    在源头上讲不合法的东西过滤掉，从而保证安全性。比如：移除用户提交的DOM属性，如onerror；移除用户上传的Style节点，如&lt;iframe&gt;、&lt;script&gt;、&lt;a&gt;等。<br>2.出参进行编码<br>    如果源头没有控制好，就要在后期将一些常见的符号进行编码，如&lt;&gt;用’&amp;lt’和’&amp;gt’来替换；<br>3.入参长度限制<br>    通过上面的例子可以看出xss攻击往往需要较长的字符串才能实现，因此可以限制一些可以输入长度来进行防御。<br>4.设置cookie httponly为true<br>    Cookie由服务端来写并将httpOnly设置成为“true”，Cookie中设置了”HttpOnly”属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。</p>
+<h2 id="防范手段"><a href="#防范手段" class="headerlink" title="防范手段"></a>防范手段</h2><p>1.入参字符过滤<br>    在源头上讲不合法的东西过滤掉，从而保证安全性。比如：移除用户提交的DOM属性，如onerror；移除用户上传的Style节点，如&lt;iframe&gt;、&lt;script&gt;、&lt;a&gt;等。<br>2.出参进行编码<br>    如果源头没有控制好，就要在后期将一些常见的符号进行编码，如<>用'&lt'和'&gt'来替换；<br>3.入参长度限制<br>    通过上面的例子可以看出xss攻击往往需要较长的字符串才能实现，因此可以限制一些可以输入长度来进行防御。<br>4.设置cookie httponly为true<br>    Cookie由服务端来写并将httpOnly设置成为“true”，Cookie中设置了"HttpOnly"属性，那么通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。</p>
+<hr>
 <h1 id="3-数据结构"><a href="#3-数据结构" class="headerlink" title="3.数据结构"></a>3.数据结构</h1><h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p>顺序线性表：<br>    数组：<br>    1.访问快，时间复杂度O(1)<br>链式线性表：</p>
 <h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>栈</p>
 <p>队列</p>
@@ -188,7 +302,7 @@
 <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><h2 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h2><h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><h1 id="2-算法"><a href="#2-算法" class="headerlink" title="2.算法"></a>2.算法</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>从排序前后位置是否变化分为：稳定和不稳定。<br>根据排序时是否需要将数据全部加载到内存分为：内排和外排。</p>
 <h3 id="冒泡排序（稳定，内排）"><a href="#冒泡排序（稳定，内排）" class="headerlink" title="冒泡排序（稳定，内排）"></a>冒泡排序（稳定，内排）</h3><h3 id="选择排序（不稳定，内排）"><a href="#选择排序（不稳定，内排）" class="headerlink" title="选择排序（不稳定，内排）"></a>选择排序（不稳定，内排）</h3><h3 id="插入排序（稳定，内排）"><a href="#插入排序（稳定，内排）" class="headerlink" title="插入排序（稳定，内排）"></a>插入排序（稳定，内排）</h3><h3 id="希尔排序（不稳定，内排）"><a href="#希尔排序（不稳定，内排）" class="headerlink" title="希尔排序（不稳定，内排）"></a>希尔排序（不稳定，内排）</h3><h3 id="堆排序（不稳定，内排）"><a href="#堆排序（不稳定，内排）" class="headerlink" title="堆排序（不稳定，内排）"></a>堆排序（不稳定，内排）</h3><h3 id="快速排序（不稳定，内排）"><a href="#快速排序（不稳定，内排）" class="headerlink" title="快速排序（不稳定，内排）"></a>快速排序（不稳定，内排）</h3><h3 id="归并排序（稳定，外排）"><a href="#归并排序（稳定，外排）" class="headerlink" title="归并排序（稳定，外排）"></a>归并排序（稳定，外排）</h3><h3 id="计数排序（稳定，外排）"><a href="#计数排序（稳定，外排）" class="headerlink" title="计数排序（稳定，外排）"></a>计数排序（稳定，外排）</h3><h3 id="桶排序（稳定，外排）"><a href="#桶排序（稳定，外排）" class="headerlink" title="桶排序（稳定，外排）"></a>桶排序（稳定，外排）</h3><h3 id="基数排序（稳定，外排）"><a href="#基数排序（稳定，外排）" class="headerlink" title="基数排序（稳定，外排）"></a>基数排序（稳定，外排）</h3><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><h1 id="1-其他"><a href="#1-其他" class="headerlink" title="1.其他"></a>1.其他</h1><p>tcp三次握手和四次挥手</p>
 <p>编译语言和脚本语言的区别：<br>    脚本语言介于标记语言和编译语言之间，没有复杂严谨的语法和规则。<br>    脚本语言是解释型语言，比如：Python、JavaScript；脚本语言不需要编译，直接用解释器解释。<br>    编译语言需要编译器编译成二进制文件，生成可执行的文件，才能运行程序。<br>    编译语言编译后，再次运行，直接运行编译结果。修改时需要在源码上修改，再次编译。<br>    脚本语言更抽象，存在高级数据结构：列表、字典。编译语言需要明确的定义。<br>    脚本语言不需要类型声明，编译语言是强类型定义或静态定义。<br>    编译语言程序执行的速度比解释语言快。<br>静态链接库和动态链接库的区别：<br>    lib包含函数所在的DLL文件和文件中函数位置信息（入口），代码由运行时加载进程空间中的DLL提供，称为动态链接库：dynamic link library<br>    lib包含函数代码本身，编译时直接将代码加入程序当中，称为静态链接库：static link library。</p>
-
+</script></p>
       
 
       
@@ -477,19 +591,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://github.com/chengpingping/vuebase" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue笔记1</a>
+              <a href="http://github.com/chengpingping/vuebase" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue基础</a>
             </li>
           
             <li class="search-li">
-              <a href="http://github.com/chengpingping/vue-router-vue-component-library" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue笔记2</a>
+              <a href="http://github.com/chengpingping/vue-router-vue-component-library" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue路由和第三方组件库</a>
             </li>
           
             <li class="search-li">
-              <a href="http://github.com/chengpingping/vueproject" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue笔记3</a>
+              <a href="http://github.com/chengpingping/vueproject" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue未完成的小demo</a>
             </li>
           
             <li class="search-li">
-              <a href="http://github.com/chengpingping/H5andCSS3" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Vue笔记4</a>
+              <a href="http://github.com/chengpingping/H5andCSS3" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>H5和CSS3学习笔记</a>
             </li>
           
         </ul>
