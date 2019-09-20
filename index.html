@@ -235,11 +235,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="JSONP的实现原理-不太懂"><a href="#JSONP的实现原理-不太懂" class="headerlink" title="JSONP的实现原理(不太懂)"></a>JSONP的实现原理(不太懂)</h1><pre><code>JSONP=JSON+Padding(填充)
-JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以<script>标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
+JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&lt;script&gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
 <p><strong>JSONP是通过Javascript callback的形式实现跨域访问</strong></p>
 <p>创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</p>
 <p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
-<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html">来源</a></p>
+<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html" target="_blank" rel="noopener">来源</a></p>
         
           <a class="article-more-a" href="/chengpingping.github.io/2019/09/06/笔试/#more">more >></a>
         
