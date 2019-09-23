@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="CPPBlog">
 <meta property="og:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&amp;lt;script&amp;gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callb">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-20T12:55:40.748Z">
+<meta property="og:updated_time" content="2019-09-23T11:00:32.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试">
 <meta name="twitter:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&amp;lt;script&amp;gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callb">
@@ -174,60 +174,7 @@ JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</cod
 <p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
 <p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html" target="_blank" rel="noopener">来源</a></p>
 <a id="more"></a>
-<h1 id="css中哪些属性不具有继承性"><a href="#css中哪些属性不具有继承性" class="headerlink" title="css中哪些属性不具有继承性"></a>css中哪些属性不具有继承性</h1><h2 id="无继承性的属性"><a href="#无继承性的属性" class="headerlink" title="无继承性的属性"></a>无继承性的属性</h2><p><strong>无继承性是指后面的的属性设置不会继承前面的属性设置，会将原来设置的属性参数覆盖掉</strong></p>
-<p>1.display：规定元素生成框的类型</p>
-<p>2.文本属性：</p>
-<pre><code>vertical-align:垂直文本对齐
-text-decoration：规定添加文本的装饰
-text-shadow：文本阴影效果（**好像可以继承？？？**）
-white-space：空白符处理
-unicode-bidi：设置文本方向</code></pre><p>3.盒子模型的属性:</p>
-<pre><code>width、height、margin 、margin-top、margin-right、margin-bottom、
-margin-left、border、border-style、border-top-style、border-right-style、
-border-bottom-style、border-left-style、border-width、border-top-width、
-border-right-right、border-bottom-width、border-left-width、border-color、
-border-top-color、border-right-color、border-bottom-color、border-left-color、
-border-top、border-right、border-bottom、border-left、padding、padding-top、
-padding-right、padding-bottom、padding-left</code></pre><p>4.背景属性：</p>
-<pre><code>background、background-color、background-image、background-repeat、
-background-position、background-attachment</code></pre><p>5.定位属性：</p>
-<pre><code>float、clear、position、top、right、bottom、left、min-width、
-min-height、max-width、max-height、overflow、clip、z-index</code></pre><p>6.生成内容属性：</p>
-<pre><code>content、counter-reset、counter-increment</code></pre><p>7.轮廓样式属性：</p>
-<pre><code>outline-style、outline-width、outline-color、outlin</code></pre><p>8.页面样式属性：</p>
-<pre><code>size、page-break-before、page-break-after</code></pre><p>9.声音样式属性：</p>
-<pre><code>pause-before、pause-after、pause、cue-before、cue-after、cue、play-during</code></pre><h2 id="具有继承性的属性"><a href="#具有继承性的属性" class="headerlink" title="具有继承性的属性"></a>具有继承性的属性</h2><p><strong>继承性是指元素的CSS属性在前面的设置会继承到后面的设置当中，这使得之前设置的属性值不会被覆盖</strong></p>
-<p>1.字体属性：</p>
-<pre><code>font:组合字体
-font-family:规定元素的字体
-font-weight：设置字体的粗细
-font-size：设置字体的大小
-font-style：定义字体的风格
-font-variant：小写字母转换为大写，但是会比其余的文本字体小
-font-stretch：对当前的font-family进行缩变
-font-size-adjust：为某个元素规定aspect值，保持首选字体的X-height</code></pre><p>2.文本系列：</p>
-<pre><code>text-indent：文本缩进
-text-align：文本水平对齐
-line-height：行高
-word-spacing：增加或减少单词间的空白（即字间隔）
-letter-spacing：增加或减少字符间的空白（字符间距）
-text-transform：控制文本大小写
-direction：规定文本的书写方向
-color:文字颜色</code></pre><p>3.元素可见性：</p>
-<pre><code>visibility</code></pre><p>4.表格布局属性：</p>
-<pre><code>caption-side、border-collapse、border-spacing、
-empty-cells、table-layout</code></pre><p>5.列表布局属性：</p>
-<pre><code>list-style-type、list-style-image、list-style-position、list-style</code></pre><p>6.生成内容属性：</p>
-<pre><code>quotes</code></pre><p>7.光标属性：</p>
-<pre><code>cursor</code></pre><p>8.页面样式属性：</p>
-<pre><code>page、page-break-inside、windows、orphans</code></pre><p>9.声音样式属性：</p>
-<pre><code>speak、speak-punctuation、speak-numeral、
-speak-header、speech-rate、volume、voice-family、
-pitch、pitch-range、stress、richness、、azimuth、elevation</code></pre><h2 id="所有元素课继承"><a href="#所有元素课继承" class="headerlink" title="所有元素课继承"></a>所有元素课继承</h2><p>1.元素可见性：visibility</p>
-<p>2.光标属性：cursor</p>
-<h2 id="内联元素可以继承的属性"><a href="#内联元素可以继承的属性" class="headerlink" title="内联元素可以继承的属性"></a>内联元素可以继承的属性</h2><p>1.字体属性</p>
-<p>2.除text-indent、text-align之外的文本系列属性</p>
-<h2 id="块级元素可继承属性"><a href="#块级元素可继承属性" class="headerlink" title="块级元素可继承属性"></a>块级元素可继承属性</h2><p>text-indent、text-align</p>
+
 <h1 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h1><p>vue有一个完整的生命周期：</p>
 <p>开始创建-&gt;初始化数据-&gt;编译模板-&gt;挂载DOM-&gt;渲染-&gt;更新-&gt;渲染、卸载</p>
 <p>new Vue():</p>
@@ -247,10 +194,7 @@ pitch、pitch-range、stress、richness、、azimuth、elevation</code></pre><h2
 <p>实例销毁之前调用，此时实例还可以使用</p>
 <p>8.destroyed(销毁后)</p>
 <p>Vue实例销毁后调用，调用后Vue实例的所有东西都会解绑，监听器也会被移除，所有的字实例也会被销毁</p>
-<h1 id="CSS文档流-待补充）"><a href="#CSS文档流-待补充）" class="headerlink" title="CSS文档流(待补充）"></a>CSS文档流(待补充）</h1><p>内联元素默认从左到右，遇到阻碍自动换行；</p>
-<p>块级元素独占一行，按从上到下的方式进行布局；</p>
-<h2 id="脱离文档流的方法"><a href="#脱离文档流的方法" class="headerlink" title="脱离文档流的方法"></a>脱离文档流的方法</h2><pre><code>position：absolute/fixed
-float:left</code></pre><h1 id="JS中6大数据类型和3大引用类型"><a href="#JS中6大数据类型和3大引用类型" class="headerlink" title="JS中6大数据类型和3大引用类型"></a>JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
+<h1 id="JS中6大数据类型和3大引用类型"><a href="#JS中6大数据类型和3大引用类型" class="headerlink" title="JS中6大数据类型和3大引用类型"></a>JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
 <pre><code>Number类型
 String类型
 Boolean类型
