@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>算法 | CPPBlog</title>
+  <title>算法笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="studying...">
+  <meta name="description" content="1.冒泡排序var nums=[32,45,1,56,3,4,6,87,2,1,32,6,43,23,34,56] for(var i=0;i&amp;lt;nums.length;i++){     for(var j=0;j&amp;lt;nums.length-i;j++){         if(nums[j]&amp;gt;nums[j+1]){             var temp;">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法">
+<meta property="og:title" content="算法笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/算法笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="studying...">
+<meta property="og:description" content="1.冒泡排序var nums=[32,45,1,56,3,4,6,87,2,1,32,6,43,23,34,56] for(var i=0;i&amp;lt;nums.length;i++){     for(var j=0;j&amp;lt;nums.length-i;j++){         if(nums[j]&amp;gt;nums[j+1]){             var temp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-23T10:49:28.386Z">
+<meta property="og:updated_time" content="2019-09-23T11:19:53.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法">
-<meta name="twitter:description" content="studying...">
+<meta name="twitter:title" content="算法笔试">
+<meta name="twitter:description" content="1.冒泡排序var nums=[32,45,1,56,3,4,6,87,2,1,32,6,43,23,34,56] for(var i=0;i&amp;lt;nums.length;i++){     for(var j=0;j&amp;lt;nums.length-i;j++){         if(nums[j]&amp;gt;nums[j+1]){             var temp;">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      算法
+      算法笔试
     </h1>
   
 
@@ -167,7 +167,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h1><pre><code>var nums=[32,45,1,56,3,4,6,87,2,1,32,6,43,23,34,56]
+for(var i=0;i&lt;nums.length;i++){
+    for(var j=0;j&lt;nums.length-i;j++){
+        if(nums[j]&gt;nums[j+1]){
+            var temp;
+            temp=nums[j];
+            nums[j]=nums[j+1];
+            nums[j+1]=temp;
+        }
+    }
+}
+console.log(nums);</code></pre>
       
 
       

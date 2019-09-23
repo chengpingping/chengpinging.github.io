@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端JavaScript笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="studying...">
+  <meta name="description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端JavaScript笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/前端JavaScript笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="studying...">
+<meta property="og:description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-23T10:51:01.186Z">
+<meta property="og:updated_time" content="2019-09-23T11:14:51.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端JavaScript笔试">
-<meta name="twitter:description" content="studying...">
+<meta name="twitter:description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -167,7 +167,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="3-JS中6大数据类型和3大引用类型"><a href="#3-JS中6大数据类型和3大引用类型" class="headerlink" title="3.JS中6大数据类型和3大引用类型"></a>3.JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
+<pre><code>Number类型
+String类型
+Boolean类型
+Undefined类型
+Null类型
+Objective类型</code></pre><p>这种数据类型也称为原始数据类型，存储在<strong>栈内存（stack）</strong>中，占据的空间小，使用比较频繁；</p>
+<p>关于复制：系统会为新的变量在栈中分配一个新的内存区域。</p>
+<a id="more"></a>
+
+<p><strong>三大引用类型</strong></p>
+<pre><code>Object类型
+Array类型
+Function类型</code></pre><p>这种数据存储在<strong>堆内存（heap）</strong>中，占据的空间大，大小不稳定；在栈中只存储一个地址来表示对堆内存的引用</p>
+<p>关于复制：系统也会为新的变量在栈中分配一个内存区域，但是它是用于存储地址的，所以指向以前在堆中的地址，如果你改变一个变量，另外一个也会改变</p>
+<hr>
+<hr>
+<h1 id="2-JS中new的作用"><a href="#2-JS中new的作用" class="headerlink" title="2.JS中new的作用"></a>2.JS中new的作用</h1><p>1.new 构造函数()可以在内存中创建一个空对象；</p>
+<p>2.this会指向刚才创建的空对象；</p>
+<p>3.执行构造函数的里面的代码，给对象添加属性和方法；</p>
+<p>4.返回这个对象（不需要return）。</p>
+<hr>
+<hr>
+<h1 id="1-var、let、const的区别"><a href="#1-var、let、const的区别" class="headerlink" title="1.var、let、const的区别"></a>1.var、let、const的区别</h1><p>var是es3提出的变量，let和const是es6提出来的</p>
+<p>1.var声明的变量会挂载到window上，let和const不会</p>
+<p>2.var声明变量存在变量提升，let和const不存在</p>
+<p>3.let和const声明形成块作用域，而var不会</p>
+<p>4.在同一个作用域下let和const不能声明同名变量，而var可以</p>
+<p>5.缓存死区–在当前块作用域中存在a使用let/const声明的情况下，只会在当前作用域找变量a；而这时，还未到声明时候，所以控制台Error:a is not defined</p>
+<p>6.const一旦声明必须赋值（常量声明）,不能使用null占位。声明后不能再修改;如果声明的是复合类型数据，可以修改其属性</p>
+
       
 
       

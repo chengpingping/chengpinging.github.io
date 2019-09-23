@@ -168,6 +168,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="3-JS中6大数据类型和3大引用类型"><a href="#3-JS中6大数据类型和3大引用类型" class="headerlink" title="3.JS中6大数据类型和3大引用类型"></a>3.JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
+<pre><code>Number类型
+String类型
+Boolean类型
+Undefined类型
+Null类型
+Objective类型</code></pre><p>这种数据类型也称为原始数据类型，存储在<strong>栈内存（stack）</strong>中，占据的空间小，使用比较频繁；</p>
+<p>关于复制：系统会为新的变量在栈中分配一个新的内存区域。</p>
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端JavaScript笔试/#more">more >></a>
         
       
 
@@ -237,75 +247,10 @@
 text-decoration：规定添加文本的装饰
 text-shadow：文本阴影效果（**好像可以继承？？？**）
 white-space：空白符处理
-unicode-bidi：设置文本方向</code></pre><p>3.盒子模型的属性:</p>
-<pre><code>width、height、margin 、margin-top、margin-right、margin-bottom、
-margin-left、border、border-style、border-top-style、border-right-style、
-border-bottom-style、border-left-style、border-width、border-top-width、
-border-right-right、border-bottom-width、border-left-width、border-color、
-border-top-color、border-right-color、border-bottom-color、border-left-color、
-border-top、border-right、border-bottom、border-left、padding、padding-top、
-padding-right、padding-bottom、padding-left
-
-&lt;!--more--&gt;</code></pre><p>4.背景属性：</p>
-<pre><code>background、background-color、background-image、background-repeat、
-background-position、background-attachment</code></pre><p>5.定位属性：</p>
-<pre><code>float、clear、position、top、right、bottom、left、min-width、
-min-height、max-width、max-height、overflow、clip、z-index</code></pre><p>6.生成内容属性：</p>
-<pre><code>content、counter-reset、counter-increment</code></pre><p>7.轮廓样式属性：</p>
-<pre><code>outline-style、outline-width、outline-color、outlin</code></pre><p>8.页面样式属性：</p>
-<pre><code>size、page-break-before、page-break-after</code></pre><p>9.声音样式属性：</p>
-<pre><code>pause-before、pause-after、pause、cue-before、cue-after、cue、play-during</code></pre><h2 id="具有继承性的属性"><a href="#具有继承性的属性" class="headerlink" title="具有继承性的属性"></a>具有继承性的属性</h2><p><strong>继承性是指元素的CSS属性在前面的设置会继承到后面的设置当中，这使得之前设置的属性值不会被覆盖</strong></p>
-<p>1.字体属性：</p>
-<pre><code>font:组合字体
-font-family:规定元素的字体
-font-weight：设置字体的粗细
-font-size：设置字体的大小
-font-style：定义字体的风格
-font-variant：小写字母转换为大写，但是会比其余的文本字体小
-font-stretch：对当前的font-family进行缩变
-font-size-adjust：为某个元素规定aspect值，保持首选字体的X-height</code></pre><p>2.文本系列：</p>
-<pre><code>text-indent：文本缩进
-text-align：文本水平对齐
-line-height：行高
-word-spacing：增加或减少单词间的空白（即字间隔）
-letter-spacing：增加或减少字符间的空白（字符间距）
-text-transform：控制文本大小写
-direction：规定文本的书写方向
-color:文字颜色</code></pre><p>3.元素可见性：</p>
-<pre><code>visibility</code></pre><p>4.表格布局属性：</p>
-<pre><code>caption-side、border-collapse、border-spacing、
-empty-cells、table-layout</code></pre><p>5.列表布局属性：</p>
-<pre><code>list-style-type、list-style-image、list-style-position、list-style</code></pre><p>6.生成内容属性：</p>
-<pre><code>quotes</code></pre><p>7.光标属性：</p>
-<pre><code>cursor</code></pre><p>8.页面样式属性：</p>
-<pre><code>page、page-break-inside、windows、orphans</code></pre><p>9.声音样式属性：</p>
-<pre><code>speak、speak-punctuation、speak-numeral、
-speak-header、speech-rate、volume、voice-family、
-pitch、pitch-range、stress、richness、、azimuth、elevation</code></pre><h2 id="所有元素可继承"><a href="#所有元素可继承" class="headerlink" title="所有元素可继承"></a>所有元素可继承</h2><p>1.元素可见性：visibility</p>
-<p>2.光标属性：cursor</p>
-<h2 id="内联元素可以继承的属性"><a href="#内联元素可以继承的属性" class="headerlink" title="内联元素可以继承的属性"></a>内联元素可以继承的属性</h2><p>1.字体属性</p>
-<p>2.除text-indent、text-align之外的文本系列属性</p>
-<h2 id="块级元素可继承属性"><a href="#块级元素可继承属性" class="headerlink" title="块级元素可继承属性"></a>块级元素可继承属性</h2><p>text-indent、text-align</p>
-<hr>
-<hr>
-<h1 id="1-CSS文档流-待补充）"><a href="#1-CSS文档流-待补充）" class="headerlink" title="1.CSS文档流(待补充）"></a>1.CSS文档流(待补充）</h1><p>内联元素默认从左到右，遇到阻碍自动换行；</p>
-<p>块级元素独占一行，按从上到下的方式进行布局；</p>
-<h2 id="脱离文档流的方法"><a href="#脱离文档流的方法" class="headerlink" title="脱离文档流的方法"></a>脱离文档流的方法</h2><p>浮动的框可以向左或向右移动，直到他的边缘碰到包含框或者另外一个浮动框为止。</p>
-<p>由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得像浮动的框不存在一样。</p>
-<pre><code>position：absolute/fixed
-float:left</code></pre><h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>浮动会导致父元素高度坍塌：父元素中必定有子元素，并且父元素没有设置高度，子元素在父元素中浮动，结果必然会导致父元素高度为零，这就是父元素坍塌的问题。</p>
-<p><strong><em>1</em></strong>.在浮动元素后添加一个空标签，然后在css中清除浮动，就可以让父元素自动获取高度：</p>
-<pre><code>clear:both;</code></pre><p><strong>优点</strong>：代码少，兼容所有的浏览器；</p>
-<p><strong>缺点</strong>：增加页面的标签，造成结构的混乱；</p>
-<p>不推荐使用，已过时。</p>
-<p>**</p>
-<p><strong><em>2</em></strong>.:after伪元素的使用,给浮动的元素的容器添加一个clearfix的class,然后给这个class添加一个:after的伪元素之后添加一个看不见的块级元素清除浮动。</p>
-<p>.clearfix:before,.clearfix:after{<br>    display:block/table;<br>    content:””;<br>}</p>
-<p>.clearfix:after{<br>    clear:both;<br>}</p>
-<p>.clearfix{<br>    <em>zoom:1;<br>}<br>*</em>优点**：浏览器支持较好</p>
-<p><strong>注意</strong>：clearfix这个类需要添加zoom:1（触发haslayout）,才能支持IE6和IE7;</p>
-<p>推荐使用，设置公共类，减少css代码</p>
-
+unicode-bidi：设置文本方向</code></pre>
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端CSS笔试/#more">more >></a>
+        
       
 
       
@@ -367,7 +312,8 @@ float:left</code></pre><h2 id="清除浮动"><a href="#清除浮动" class="head
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-H5中新增的标签"><a href="#1-H5中新增的标签" class="headerlink" title="1.H5中新增的标签"></a>1.H5中新增的标签</h1><p><a href="https://github.com/chengpingping/H5andCSS3#h5%E4%B8%AD%E7%9A%84%E6%96%B0%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">h5中新增的标签</a></p>
+
       
 
       
@@ -416,7 +362,7 @@ float:left</code></pre><h2 id="清除浮动"><a href="#清除浮动" class="head
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/chengpingping.github.io/2019/09/23/算法笔试/">算法</a>
+      <a class="article-title" href="/chengpingping.github.io/2019/09/23/算法笔试/">算法笔试</a>
     </h1>
   
 
@@ -429,7 +375,18 @@ float:left</code></pre><h2 id="清除浮动"><a href="#清除浮动" class="head
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h1><pre><code>var nums=[32,45,1,56,3,4,6,87,2,1,32,6,43,23,34,56]
+for(var i=0;i&lt;nums.length;i++){
+    for(var j=0;j&lt;nums.length-i;j++){
+        if(nums[j]&gt;nums[j+1]){
+            var temp;
+            temp=nums[j];
+            nums[j]=nums[j+1];
+            nums[j+1]=temp;
+        }
+    }
+}
+console.log(nums);</code></pre>
       
 
       
