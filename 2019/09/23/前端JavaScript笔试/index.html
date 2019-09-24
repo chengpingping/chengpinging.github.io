@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端JavaScript笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
+  <meta name="description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端JavaScript笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/前端JavaScript笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
+<meta property="og:description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-23T11:14:51.876Z">
+<meta property="og:updated_time" content="2019-09-24T09:07:46.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端JavaScript笔试">
-<meta name="twitter:description" content="3.JS中6大数据类型和3大引用类型六大数据类型 Number类型 String类型 Boolean类型 Undefined类型 Null类型 Objective类型这种数据类型也称为原始数据类型，存储在栈内存（stack）中，占据的空间小，使用比较频繁； 关于复制：系统会为新的变量在栈中分配一个新的内存区域。">
+<meta name="twitter:description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/head.jpeg" class="js-avatar">
+			<img src="/img/head.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Cheng Pingping</a></h1>
@@ -102,7 +102,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/head.jpeg" class="js-avatar">
+				<img src="/img/head.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Cheng Pingping</h1>
@@ -167,7 +167,71 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="3-JS中6大数据类型和3大引用类型"><a href="#3-JS中6大数据类型和3大引用类型" class="headerlink" title="3.JS中6大数据类型和3大引用类型"></a>3.JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
+        <h1 id="7-深度克隆（待完成）"><a href="#7-深度克隆（待完成）" class="headerlink" title="7.深度克隆（待完成）"></a>7.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="6-函数this的含义"><a href="#6-函数this的含义" class="headerlink" title="6.函数this的含义"></a>6.函数this的含义</h1><h2 id="1-默认代表window对象"><a href="#1-默认代表window对象" class="headerlink" title="1.默认代表window对象"></a>1.默认代表window对象</h2><pre><code>function fn(){
+    console.log(this.val);//打印1
+}
+var val=1;
+fn();</code></pre><h2 id="2-通过一个对象调用该函数，则this代表调用它的对象"><a href="#2-通过一个对象调用该函数，则this代表调用它的对象" class="headerlink" title="2.通过一个对象调用该函数，则this代表调用它的对象"></a>2.通过一个对象调用该函数，则this代表调用它的对象</h2><pre><code>function fn(){
+    console.log(this.val);//打印1
+}
+var obj={
+    val:1,
+    fun:fn
+}
+obj.fun();</code></pre><a id="more"></a>
+
+<p><strong>注意</strong></p>
+<pre><code>function fn(){
+    console.log(this.val);//打印2
+}
+var val=2;
+var obj={
+    val:1,
+    fun:fn
+}
+var newfn=obj.fun;
+newfn();</code></pre><p>由于obj.fun被赋值给了newfn，所以newfn是一个新的对象，他的this指向的是window对象。</p>
+<h2 id="3-使用apply-call-bind-调用时，this表示传入的第一个参数，如果传入的参数为null，this代表window对象"><a href="#3-使用apply-call-bind-调用时，this表示传入的第一个参数，如果传入的参数为null，this代表window对象" class="headerlink" title="3.使用apply() call() bind()调用时，this表示传入的第一个参数，如果传入的参数为null，this代表window对象"></a>3.使用apply() call() bind()调用时，this表示传入的第一个参数，如果传入的参数为null，this代表window对象</h2><pre><code>function fn(){
+    console.log(this.val);//打印1
+}
+var obj={
+    val:1
+}
+fn.call(obj);</code></pre><p><strong>方法apply() call() bind()的作用和区别（待补充）</strong></p>
+<p>每一个Function对象都有一个call()和apply()；</p>
+<p>使用apply和call方法调用一个函数，使得他具有指定的this值和分别提供的参数；</p>
+<p>call()方法接受若干个参数列表，apply()方法接受一个包含多个参数的数组；</p>
+<p>call()和apply()是立马运行，而bind()方法需要触发一个条件以后才能运行，bind()是引用不是调用，需要绑定到一个事件上，被触发时调用。</p>
+<h2 id="4-通过构造函数，使用new创建对象时，this代表新创建的对象"><a href="#4-通过构造函数，使用new创建对象时，this代表新创建的对象" class="headerlink" title="4.通过构造函数，使用new创建对象时，this代表新创建的对象"></a>4.通过构造函数，使用new创建对象时，this代表新创建的对象</h2><pre><code>function fn(val){
+    this.val=val;
+}
+var obj=new fn(1);
+console.log(obj.val);//打印1</code></pre><p><a href="https://blog.csdn.net/hrbbec/article/details/81195067" target="_blank" rel="noopener">参考1</a></p>
+<p><a href="https://www.jianshu.com/p/60f25d6571f0" target="_blank" rel="noopener">参考2</a></p>
+<h1 id="5-prototype"><a href="#5-prototype" class="headerlink" title="5.prototype"></a>5.prototype</h1><p><strong>使你有能力向对象添加属性和方法。</strong></p>
+<p>JavaScript中时通过构造函数（constructor）和原型链（prototype chains）来实现的；</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>提供一个生成对象的模板，描述对象的基本结构。</p>
+<p><strong>特点</strong></p>
+<pre><code>构造函数名首字母大写；
+内部使用this对象，指向将要生成的对象实例；
+使用new操作符来条用构造函数，并返回对象。</code></pre><p><strong>缺点</strong></p>
+<pre><code>同一个构造函数的实力无法共享属性和方法。</code></pre><h2 id="prototype属性的作用"><a href="#prototype属性的作用" class="headerlink" title="prototype属性的作用"></a>prototype属性的作用</h2><p>为了解决构造函数的对象之间无法共享属性的缺点。</p>
+<p>prototype对于构造函数来说它是一个属性，对于对象实例来说他是一个原型对象。</p>
+<p>原型对象的作用就是定义所有对象实例所共享的属性和方法。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>对象的属性和方法可能定义在他自身，也有可能定义在他的原型对象。原型对象本身也是一个对象，也有自己的原型，这样就形成了一条原型链。</p>
+<p><strong>特点</strong></p>
+<pre><code>1.读取对象时，JS引擎先去寻找对像本身，如果找不到就到原型中去找，还是找不到就去原型的原型中招，直到最顶层的Object.prototype还是找不到，就返回undefined；
+2.如果对象自身和他的原型都定义了一个同名的属性，优先读取自身的属性，这叫做覆盖（overiding）
+3.向上寻找原型属性，会影响性能，寻找的属性越往上，对性能的影响越大。如果是寻找一个不存在的属性，将会遍历整个原型链。</code></pre><h2 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h2><p>prototype对象有一个constructor属性，默认指向prototype对象所在的构造函数。</p>
+<p><a href="https://www.cnblogs.com/douyage/p/8630529.html" target="_blank" rel="noopener">参考（非常详细）</a></p>
+<h1 id="4-JSONP的实现原理-不太懂"><a href="#4-JSONP的实现原理-不太懂" class="headerlink" title="4.JSONP的实现原理(不太懂)"></a>4.JSONP的实现原理(不太懂)</h1><pre><code>JSONP=JSON+Padding(填充)
+JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&lt;script&gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
+<p><strong>JSONP是通过Javascript callback的形式实现跨域访问</strong></p>
+<p>创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</p>
+<p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
+<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="3-JS中6大数据类型和3大引用类型"><a href="#3-JS中6大数据类型和3大引用类型" class="headerlink" title="3.JS中6大数据类型和3大引用类型"></a>3.JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
 <pre><code>Number类型
 String类型
 Boolean类型
@@ -175,9 +239,9 @@ Undefined类型
 Null类型
 Objective类型</code></pre><p>这种数据类型也称为原始数据类型，存储在<strong>栈内存（stack）</strong>中，占据的空间小，使用比较频繁；</p>
 <p>关于复制：系统会为新的变量在栈中分配一个新的内存区域。</p>
-<a id="more"></a>
-
-<p><strong>三大引用类型</strong></p>
+<p>Null和Undefined的区别：</p>
+<pre><code>Null：只有一个值null，null表示一个值被定义了，但是这个值是空值
+Undefined:只有一个值undefined，undefined表示缺少值，应该给他定义一个值，当声明的变量没有初始化的时候，变量的默认值为undefined。[参考1:](https://www.cnblogs.com/dyh-air/articles/7943295.html) [来源2](https://www.cnblogs.com/lvmylife/p/8183653.html)</code></pre><p><strong>三大引用类型</strong></p>
 <pre><code>Object类型
 Array类型
 Function类型</code></pre><p>这种数据存储在<strong>堆内存（heap）</strong>中，占据的空间大，大小不稳定；在栈中只存储一个地址来表示对堆内存的引用</p>

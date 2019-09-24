@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&amp;lt;script&amp;gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callb">
+  <meta name="description" content="6.浏览器从输入网址到页面显示完成有哪些处理过程过程：浏览器输入域名-&amp;gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&amp;gt;DNS查询到域名（获取相应的IP）-&amp;gt;TCP/IP链接（三次握手）-&amp;gt;建立连接-&amp;gt;浏览器发出请求（数据）-&amp;gt;服务器响应（将数据返回浏览器）-&amp;gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&amp;lt;script&amp;gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callb">
+<meta property="og:description" content="6.浏览器从输入网址到页面显示完成有哪些处理过程过程：浏览器输入域名-&amp;gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&amp;gt;DNS查询到域名（获取相应的IP）-&amp;gt;TCP/IP链接（三次握手）-&amp;gt;建立连接-&amp;gt;浏览器发出请求（数据）-&amp;gt;服务器响应（将数据返回浏览器）-&amp;gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-23T11:15:21.530Z">
+<meta property="og:updated_time" content="2019-09-24T03:24:33.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试">
-<meta name="twitter:description" content="JSONP的实现原理(不太懂)JSONP=JSON+Padding(填充) JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&amp;lt;script&amp;gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。 JSONP是通过Javascript callb">
+<meta name="twitter:description" content="6.浏览器从输入网址到页面显示完成有哪些处理过程过程：浏览器输入域名-&amp;gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&amp;gt;DNS查询到域名（获取相应的IP）-&amp;gt;TCP/IP链接（三次握手）-&amp;gt;建立连接-&amp;gt;浏览器发出请求（数据）-&amp;gt;服务器响应（将数据返回浏览器）-&amp;gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/head.jpeg" class="js-avatar">
+			<img src="/img/head.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Cheng Pingping</a></h1>
@@ -102,7 +102,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/head.jpeg" class="js-avatar">
+				<img src="/img/head.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Cheng Pingping</h1>
@@ -167,12 +167,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSONP的实现原理-不太懂"><a href="#JSONP的实现原理-不太懂" class="headerlink" title="JSONP的实现原理(不太懂)"></a>JSONP的实现原理(不太懂)</h1><pre><code>JSONP=JSON+Padding(填充)
-JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&lt;script&gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
-<p><strong>JSONP是通过Javascript callback的形式实现跨域访问</strong></p>
-<p>创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</p>
-<p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
-<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html" target="_blank" rel="noopener">来源</a></p>
+        <h1 id="6-浏览器从输入网址到页面显示完成有哪些处理过程"><a href="#6-浏览器从输入网址到页面显示完成有哪些处理过程" class="headerlink" title="6.浏览器从输入网址到页面显示完成有哪些处理过程"></a>6.浏览器从输入网址到页面显示完成有哪些处理过程</h1><p><strong>过程</strong>：浏览器输入域名-&gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&gt;DNS查询到域名（获取相应的IP）-&gt;TCP/IP链接（三次握手）-&gt;建立连接-&gt;浏览器发出请求（数据）-&gt;服务器响应（将数据返回浏览器）-&gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树；解析CSS样式，浏览器渲染；JS交互绑定域名，数量不限）</p>
+<p><strong>DNS</strong>(Domain Name System,域名系统)，是万维网上域名和IP地址相互映射的一个分布式数据库，能将域名翻译为IP地址。</p>
+<p><strong>三次握手</strong></p>
+<p>第一次：主机向服务器发送建立连接的请求；</p>
+<p>第二次：服务器接到请求后向主机发送同意信号；</p>
+<p>第三次：主机接到同意信号后，再一次向服务器发送确认信号。</p>
+<p>（三次握手过程采用的是TCP协议，可以保证信息传输的可靠性；只要有一次传输不成功，协议会重新发送信号）</p>
+<p><strong>四次挥手</strong></p>
+<p>第一次：主机向服务器发送一个断开连接的请求；</p>
+<p>第二次：服务器接到请求后发送确认收到请求的信号；</p>
+<p>第三次：服务器向主机发出断开的通知；</p>
+<p>第四次：主机接到通知后断开连接，并反馈一个确认信号，服务器收到信号后断开连接。</p>
+<p>（服务器接到断开通知没有立即同意断开，是因为有可能数据并未加载完毕，所以服务器先发送确认信号，等数据发送完毕再同意断开）</p>
+<p><a href="https://blog.csdn.net/wang_liuyong/article/details/81540175" target="_blank" rel="noopener">参考</a></p>
 <a id="more"></a>
 
 <h1 id="5-Vue的生命周期"><a href="#5-Vue的生命周期" class="headerlink" title="5.Vue的生命周期"></a>5.Vue的生命周期</h1><p>vue有一个完整的生命周期：</p>

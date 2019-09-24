@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/head.jpeg" class="js-avatar">
+			<img src="/img/head.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Cheng Pingping</a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/head.jpeg" class="js-avatar">
+				<img src="/img/head.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Cheng Pingping</h1>
@@ -168,14 +168,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="3-JS中6大数据类型和3大引用类型"><a href="#3-JS中6大数据类型和3大引用类型" class="headerlink" title="3.JS中6大数据类型和3大引用类型"></a>3.JS中6大数据类型和3大引用类型</h1><p><strong>六大数据类型</strong></p>
-<pre><code>Number类型
-String类型
-Boolean类型
-Undefined类型
-Null类型
-Objective类型</code></pre><p>这种数据类型也称为原始数据类型，存储在<strong>栈内存（stack）</strong>中，占据的空间小，使用比较频繁；</p>
-<p>关于复制：系统会为新的变量在栈中分配一个新的内存区域。</p>
+        <h1 id="7-深度克隆（待完成）"><a href="#7-深度克隆（待完成）" class="headerlink" title="7.深度克隆（待完成）"></a>7.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="6-函数this的含义"><a href="#6-函数this的含义" class="headerlink" title="6.函数this的含义"></a>6.函数this的含义</h1><h2 id="1-默认代表window对象"><a href="#1-默认代表window对象" class="headerlink" title="1.默认代表window对象"></a>1.默认代表window对象</h2><pre><code>function fn(){
+    console.log(this.val);//打印1
+}
+var val=1;
+fn();</code></pre><h2 id="2-通过一个对象调用该函数，则this代表调用它的对象"><a href="#2-通过一个对象调用该函数，则this代表调用它的对象" class="headerlink" title="2.通过一个对象调用该函数，则this代表调用它的对象"></a>2.通过一个对象调用该函数，则this代表调用它的对象</h2><pre><code>function fn(){
+    console.log(this.val);//打印1
+}
+var obj={
+    val:1,
+    fun:fn
+}
+obj.fun();</code></pre>
         
           <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端JavaScript笔试/#more">more >></a>
         
@@ -240,14 +245,16 @@ Objective类型</code></pre><p>这种数据类型也称为原始数据类型，�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2-css中哪些属性不具有继承性"><a href="#2-css中哪些属性不具有继承性" class="headerlink" title="2.css中哪些属性不具有继承性"></a>2.css中哪些属性不具有继承性</h1><h2 id="无继承性的属性"><a href="#无继承性的属性" class="headerlink" title="无继承性的属性"></a>无继承性的属性</h2><p><strong>无继承性是指后面的的属性设置不会继承前面的属性设置，会将原来设置的属性参数覆盖掉</strong></p>
-<p>1.display：规定元素生成框的类型</p>
-<p>2.文本属性：</p>
-<pre><code>vertical-align:垂直文本对齐
-text-decoration：规定添加文本的装饰
-text-shadow：文本阴影效果（**好像可以继承？？？**）
-white-space：空白符处理
-unicode-bidi：设置文本方向</code></pre>
+        <h1 id="8-css中实现动画的方式"><a href="#8-css中实现动画的方式" class="headerlink" title="8.css中实现动画的方式"></a>8.css中实现动画的方式</h1><h2 id="transition过渡"><a href="#transition过渡" class="headerlink" title="transition过渡"></a>transition过渡</h2><pre><code>transition: 需要过渡的元素名称 过渡样式 过渡时间</code></pre><h2 id="animation动画"><a href="#animation动画" class="headerlink" title="animation动画"></a>animation动画</h2><pre><code>animation: 动画名称 动画样式 动画时间</code></pre><p>使用@keyframes定义关键帧动画</p>
+<pre><code>@keyframes 动画名称{
+    from{
+
+    }
+    ...
+    to{
+
+    }
+}</code></pre>
         
           <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端CSS笔试/#more">more >></a>
         
@@ -514,12 +521,20 @@ console.log(nums);</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSONP的实现原理-不太懂"><a href="#JSONP的实现原理-不太懂" class="headerlink" title="JSONP的实现原理(不太懂)"></a>JSONP的实现原理(不太懂)</h1><pre><code>JSONP=JSON+Padding(填充)
-JSON(JavaScript Object Notation),是一种轻量级的数据交换格式。</code></pre><p>JSONP是一个非官方协议，他允许在服务器集成Script tags返回客户端；所以&lt;script&gt;标签的src属性不会被同源策略所束缚，可以获取服务器上的脚本并执行。</p>
-<p><strong>JSONP是通过Javascript callback的形式实现跨域访问</strong></p>
-<p>创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</p>
-<p>将JSON数据填充进回调函数，这就是JSONP的JSON+Padding的含义。</p>
-<p><a href="https://cnblogs.com/soyxiaobi/p/9616011.html" target="_blank" rel="noopener">来源</a></p>
+        <h1 id="6-浏览器从输入网址到页面显示完成有哪些处理过程"><a href="#6-浏览器从输入网址到页面显示完成有哪些处理过程" class="headerlink" title="6.浏览器从输入网址到页面显示完成有哪些处理过程"></a>6.浏览器从输入网址到页面显示完成有哪些处理过程</h1><p><strong>过程</strong>：浏览器输入域名-&gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&gt;DNS查询到域名（获取相应的IP）-&gt;TCP/IP链接（三次握手）-&gt;建立连接-&gt;浏览器发出请求（数据）-&gt;服务器响应（将数据返回浏览器）-&gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树；解析CSS样式，浏览器渲染；JS交互绑定域名，数量不限）</p>
+<p><strong>DNS</strong>(Domain Name System,域名系统)，是万维网上域名和IP地址相互映射的一个分布式数据库，能将域名翻译为IP地址。</p>
+<p><strong>三次握手</strong></p>
+<p>第一次：主机向服务器发送建立连接的请求；</p>
+<p>第二次：服务器接到请求后向主机发送同意信号；</p>
+<p>第三次：主机接到同意信号后，再一次向服务器发送确认信号。</p>
+<p>（三次握手过程采用的是TCP协议，可以保证信息传输的可靠性；只要有一次传输不成功，协议会重新发送信号）</p>
+<p><strong>四次挥手</strong></p>
+<p>第一次：主机向服务器发送一个断开连接的请求；</p>
+<p>第二次：服务器接到请求后发送确认收到请求的信号；</p>
+<p>第三次：服务器向主机发出断开的通知；</p>
+<p>第四次：主机接到通知后断开连接，并反馈一个确认信号，服务器收到信号后断开连接。</p>
+<p>（服务器接到断开通知没有立即同意断开，是因为有可能数据并未加载完毕，所以服务器先发送确认信号，等数据发送完毕再同意断开）</p>
+<p><a href="https://blog.csdn.net/wang_liuyong/article/details/81540175" target="_blank" rel="noopener">参考</a></p>
         
           <a class="article-more-a" href="/chengpingping.github.io/2019/09/06/笔试/#more">more >></a>
         
