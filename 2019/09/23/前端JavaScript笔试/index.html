@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端JavaScript笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
+  <meta name="description" content="10.前端代码规范参考 9.关于JS中数值超出范围的问题参考 8.深度克隆（待完成）参考 7.计时器：setTimeout的用法属于window的method，用于设定时间，时间到了就会执行一个指定的程序。 setTimeout(参数1,参数2);参数1：回调函数或者字符串 参数2：触发时间（指触发函数的时间） 通常和function一起使用。 setTimeout(function(){},mi">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端JavaScript笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/前端JavaScript笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
+<meta property="og:description" content="10.前端代码规范参考 9.关于JS中数值超出范围的问题参考 8.深度克隆（待完成）参考 7.计时器：setTimeout的用法属于window的method，用于设定时间，时间到了就会执行一个指定的程序。 setTimeout(参数1,参数2);参数1：回调函数或者字符串 参数2：触发时间（指触发函数的时间） 通常和function一起使用。 setTimeout(function(){},mi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-24T09:07:46.798Z">
+<meta property="og:updated_time" content="2019-09-25T12:45:54.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端JavaScript笔试">
-<meta name="twitter:description" content="7.深度克隆（待完成）参考 6.函数this的含义1.默认代表window对象function fn(){     console.log(this.val);//打印1 } var val=1; fn();2.通过一个对象调用该函数，则this代表调用它的对象function fn(){     console.log(this.val);//打印1 } var obj={     val:1,">
+<meta name="twitter:description" content="10.前端代码规范参考 9.关于JS中数值超出范围的问题参考 8.深度克隆（待完成）参考 7.计时器：setTimeout的用法属于window的method，用于设定时间，时间到了就会执行一个指定的程序。 setTimeout(参数1,参数2);参数1：回调函数或者字符串 参数2：触发时间（指触发函数的时间） 通常和function一起使用。 setTimeout(function(){},mi">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -167,7 +167,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="7-深度克隆（待完成）"><a href="#7-深度克隆（待完成）" class="headerlink" title="7.深度克隆（待完成）"></a>7.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
+        <h1 id="10-前端代码规范"><a href="#10-前端代码规范" class="headerlink" title="10.前端代码规范"></a>10.前端代码规范</h1><p><a href="https://www.jianshu.com/p/46fd9da7e363" target="_blank" rel="noopener">参考</a></p>
+<h1 id="9-关于JS中数值超出范围的问题"><a href="#9-关于JS中数值超出范围的问题" class="headerlink" title="9.关于JS中数值超出范围的问题"></a>9.关于JS中数值超出范围的问题</h1><p><a href="https://segmentfault.com/a/1190000009084877" target="_blank" rel="noopener">参考</a></p>
+<h1 id="8-深度克隆（待完成）"><a href="#8-深度克隆（待完成）" class="headerlink" title="8.深度克隆（待完成）"></a>8.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="7-计时器：setTimeout的用法"><a href="#7-计时器：setTimeout的用法" class="headerlink" title="7.计时器：setTimeout的用法"></a>7.计时器：setTimeout的用法</h1><p>属于window的method，用于设定时间，时间到了就会执行一个指定的程序。</p>
+<pre><code>setTimeout(参数1,参数2);</code></pre><p>参数1：回调函数或者字符串</p>
+<p>参数2：触发时间（指触发函数的时间）</p>
+<p>通常和function一起使用。</p>
+<pre><code>setTimeout(function(){},milliseconds);</code></pre><p>setTimeout方法要等到主队列中的函数完成后才会执行。</p>
+<a id="more"></a>
+
 <h1 id="6-函数this的含义"><a href="#6-函数this的含义" class="headerlink" title="6.函数this的含义"></a>6.函数this的含义</h1><h2 id="1-默认代表window对象"><a href="#1-默认代表window对象" class="headerlink" title="1.默认代表window对象"></a>1.默认代表window对象</h2><pre><code>function fn(){
     console.log(this.val);//打印1
 }
@@ -179,9 +188,7 @@ var obj={
     val:1,
     fun:fn
 }
-obj.fun();</code></pre><a id="more"></a>
-
-<p><strong>注意</strong></p>
+obj.fun();</code></pre><p><strong>注意</strong></p>
 <pre><code>function fn(){
     console.log(this.val);//打印2
 }
@@ -209,7 +216,12 @@ fn.call(obj);</code></pre><p><strong>方法apply() call() bind()的作用和区�
 var obj=new fn(1);
 console.log(obj.val);//打印1</code></pre><p><a href="https://blog.csdn.net/hrbbec/article/details/81195067" target="_blank" rel="noopener">参考1</a></p>
 <p><a href="https://www.jianshu.com/p/60f25d6571f0" target="_blank" rel="noopener">参考2</a></p>
-<h1 id="5-prototype"><a href="#5-prototype" class="headerlink" title="5.prototype"></a>5.prototype</h1><p><strong>使你有能力向对象添加属性和方法。</strong></p>
+<h1 id="5-prototype"><a href="#5-prototype" class="headerlink" title="5.prototype"></a>5.prototype</h1><p><strong>题</strong></p>
+<pre><code>function n(){
+}
+var a=new n();
+console.log(n.name);//n
+console.log(Object.getPrototypeOf(a)===n.prototype);//true</code></pre><p><strong>使你有能力向对象添加属性和方法。</strong></p>
 <p>JavaScript中时通过构造函数（constructor）和原型链（prototype chains）来实现的；</p>
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>提供一个生成对象的模板，描述对象的基本结构。</p>
 <p><strong>特点</strong></p>
@@ -220,6 +232,7 @@ console.log(obj.val);//打印1</code></pre><p><a href="https://blog.csdn.net/hrb
 <p>prototype对于构造函数来说它是一个属性，对于对象实例来说他是一个原型对象。</p>
 <p>原型对象的作用就是定义所有对象实例所共享的属性和方法。</p>
 <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>对象的属性和方法可能定义在他自身，也有可能定义在他的原型对象。原型对象本身也是一个对象，也有自己的原型，这样就形成了一条原型链。</p>
+<p>一切对象的原型顶端，都是Object.prototype;Object.prototype对象也有自己的原型对象，他是没有任何属性和方法的null对象，而null没有自己的原型。</p>
 <p><strong>特点</strong></p>
 <pre><code>1.读取对象时，JS引擎先去寻找对像本身，如果找不到就到原型中去找，还是找不到就去原型的原型中招，直到最顶层的Object.prototype还是找不到，就返回undefined；
 2.如果对象自身和他的原型都定义了一个同名的属性，优先读取自身的属性，这叫做覆盖（overiding）

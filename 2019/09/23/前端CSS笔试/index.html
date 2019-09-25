@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="CPPBlog">
 <meta property="og:description" content="8.css中实现动画的方式transition过渡transition: 需要过渡的元素名称 过渡样式 过渡时间animation动画animation: 动画名称 动画样式 动画时间使用@keyframes定义关键帧动画 @keyframes 动画名称{     from{      }     ...     to{      } }">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-24T06:25:25.471Z">
+<meta property="og:updated_time" content="2019-09-25T12:46:01.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端CSS笔试">
 <meta name="twitter:description" content="8.css中实现动画的方式transition过渡transition: 需要过渡的元素名称 过渡样式 过渡时间animation动画animation: 动画名称 动画样式 动画时间使用@keyframes定义关键帧动画 @keyframes 动画名称{     from{      }     ...     to{      } }">
@@ -241,14 +241,18 @@ left{
 }</code></pre><h2 id="第四种"><a href="#第四种" class="headerlink" title="第四种"></a>第四种</h2><p>父元素设置：</p>
 <pre><code>display: flex;</code></pre><p>然后设置子元素：</p>
 <pre><code>margin: auto;</code></pre><h2 id="第五种"><a href="#第五种" class="headerlink" title="第五种"></a>第五种</h2><p>父元素设置：</p>
-<pre><code>text-align: center;
+<pre><code>/*text-align: center;*/
 display: flex;
 align-item: center;
 justify-content: center;</code></pre><p><a href="https://www.cnblogs.com/linsinan/p/6132241.html" target="_blank" rel="noopener">参考1</a></p>
 <p><a href="https://baijiahao.baidu.com/s?id=1622460301039180175&wfr=spider&for=pc" target="_blank" rel="noopener">参考2</a></p>
-<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><p>可以设置父元素：</p>
+<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><p><strong>1</strong>.可以设置父元素：</p>
 <pre><code>text-align:center;</code></pre><p>然后设置块级子元素：</p>
-<pre><code>margin: 0 auto;</code></pre><h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h1 id="5-盒模型"><a href="#5-盒模型" class="headerlink" title="5.盒模型"></a>5.盒模型</h1><p><a href="https://github.com/chengpingping/H5andCSS3#%E7%9B%92%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">盒子模型</a></p>
+<pre><code>margin: 0 auto;</code></pre><p><strong>2</strong>.父元素设置：</p>
+<pre><code>display:flex;
+justify-content:center;</code></pre><h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><p>父元素设置：</p>
+<pre><code>display:flex;
+align-item:center;</code></pre><h1 id="5-盒模型"><a href="#5-盒模型" class="headerlink" title="5.盒模型"></a>5.盒模型</h1><p><a href="https://github.com/chengpingping/H5andCSS3#%E7%9B%92%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">盒子模型</a></p>
 <p><strong>调整盒子模型的属性</strong>：</p>
 <p>1.border边框</p>
 <pre><code>border-width:边框宽度
@@ -263,33 +267,6 @@ border-color:边框颜色</code></pre><p>2.padding内边距</p>
 <p>用法与padding一样，但是margin不会影响盒子的宽度。</p>
 <p>垂直方向上外边距合并：假设一个盒子设置上外边距的值，一个盒子设置下外边距的值，取设置较大值。</p>
 <p><a href="https://blog.csdn.net/dengyao666/article/details/79491903" target="_blank" rel="noopener">参考</a></p>
-<h1 id="4-行内元素、块状元素、行内块元素"><a href="#4-行内元素、块状元素、行内块元素" class="headerlink" title="4.行内元素、块状元素、行内块元素"></a>4.行内元素、块状元素、行内块元素</h1><p><strong>行内元素</strong></p>
-<p>与其他元素并排；<br>设置宽高无效，默认文字宽度；<br>对margin上下无效，左右有效；padding上下左右都有效；<br>不会自动换行。<br>文本级标签，除了</p><p>标签都是行内元素。</p>
-<pre><code>&lt;span&gt;
-&lt;a&gt;
-&lt;img&gt;
-&lt;b&gt;
-&lt;i&gt;
-&lt;sub&gt;下标
-&lt;sup&gt;上标</code></pre><p><strong>块状元素</strong></p>
-<p>能够识别宽高；<br>margin和padding的上下左右都有效；<br>可以自动换行；<br>多个块元素默认从上至下。<br>所有容器级标签，和</p><p>标签。</p>
-<pre><code>&lt;div&gt;
-&lt;p&gt;
-&lt;nav&gt;
-&lt;aside&gt;
-&lt;ul&gt;、&lt;li&gt;</code></pre><p><strong>行内块元素</strong></p>
-<p>不自动换行；<br>能识别宽高；<br>默认排列是从左到右。</p>
-<pre><code>综合了行内元素和块状元素的特性，但又有所取舍。</code></pre><p><strong>空元素</strong></p>
-<p>没有内容；</p>
-<p>没有结束标签。</p>
-<pre><code>&lt;br /&gt;
-&lt;meta&gt;
-&lt;link&gt;
-&lt;img&gt;</code></pre><h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>使用<code>display</code>属性对三者进行任意的转换：</p>
-<pre><code>display:inline;转换为行内元素
-display:block;转换为块元素
-display:inline-block;转换为行内块元素</code></pre><p><a href="https://www.cnblogs.com/ljwk/p/7090320.html" target="_blank" rel="noopener">参考1</a></p>
-<p><a href="https://www.cnblogs.com/Aaxuan/p/6094463.html" target="_blank" rel="noopener">参考2</a></p>
 <h1 id="3-CSS3中新增的伪类"><a href="#3-CSS3中新增的伪类" class="headerlink" title="3.CSS3中新增的伪类"></a>3.CSS3中新增的伪类</h1><p><a href="https://github.com/chengpingping/H5andCSS3#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8" target="_blank" rel="noopener">新增伪类</a></p>
 <hr>
 <hr>

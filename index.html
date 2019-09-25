@@ -168,19 +168,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="7-深度克隆（待完成）"><a href="#7-深度克隆（待完成）" class="headerlink" title="7.深度克隆（待完成）"></a>7.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
-<h1 id="6-函数this的含义"><a href="#6-函数this的含义" class="headerlink" title="6.函数this的含义"></a>6.函数this的含义</h1><h2 id="1-默认代表window对象"><a href="#1-默认代表window对象" class="headerlink" title="1.默认代表window对象"></a>1.默认代表window对象</h2><pre><code>function fn(){
-    console.log(this.val);//打印1
-}
-var val=1;
-fn();</code></pre><h2 id="2-通过一个对象调用该函数，则this代表调用它的对象"><a href="#2-通过一个对象调用该函数，则this代表调用它的对象" class="headerlink" title="2.通过一个对象调用该函数，则this代表调用它的对象"></a>2.通过一个对象调用该函数，则this代表调用它的对象</h2><pre><code>function fn(){
-    console.log(this.val);//打印1
-}
-var obj={
-    val:1,
-    fun:fn
-}
-obj.fun();</code></pre>
+        <h1 id="10-前端代码规范"><a href="#10-前端代码规范" class="headerlink" title="10.前端代码规范"></a>10.前端代码规范</h1><p><a href="https://www.jianshu.com/p/46fd9da7e363" target="_blank" rel="noopener">参考</a></p>
+<h1 id="9-关于JS中数值超出范围的问题"><a href="#9-关于JS中数值超出范围的问题" class="headerlink" title="9.关于JS中数值超出范围的问题"></a>9.关于JS中数值超出范围的问题</h1><p><a href="https://segmentfault.com/a/1190000009084877" target="_blank" rel="noopener">参考</a></p>
+<h1 id="8-深度克隆（待完成）"><a href="#8-深度克隆（待完成）" class="headerlink" title="8.深度克隆（待完成）"></a>8.深度克隆（待完成）</h1><p><a href="https://www.cnblogs.com/Yance/p/7655320.html" target="_blank" rel="noopener">参考</a></p>
+<h1 id="7-计时器：setTimeout的用法"><a href="#7-计时器：setTimeout的用法" class="headerlink" title="7.计时器：setTimeout的用法"></a>7.计时器：setTimeout的用法</h1><p>属于window的method，用于设定时间，时间到了就会执行一个指定的程序。</p>
+<pre><code>setTimeout(参数1,参数2);</code></pre><p>参数1：回调函数或者字符串</p>
+<p>参数2：触发时间（指触发函数的时间）</p>
+<p>通常和function一起使用。</p>
+<pre><code>setTimeout(function(){},milliseconds);</code></pre><p>setTimeout方法要等到主队列中的函数完成后才会执行。</p>
         
           <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端JavaScript笔试/#more">more >></a>
         
@@ -319,8 +314,18 @@ obj.fun();</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-H5中新增的标签"><a href="#1-H5中新增的标签" class="headerlink" title="1.H5中新增的标签"></a>1.H5中新增的标签</h1><p><a href="https://github.com/chengpingping/H5andCSS3#h5%E4%B8%AD%E7%9A%84%E6%96%B0%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">h5中新增的标签</a></p>
-
+        <h1 id="2-行内元素、块状元素、行内块元素"><a href="#2-行内元素、块状元素、行内块元素" class="headerlink" title="2.行内元素、块状元素、行内块元素"></a>2.行内元素、块状元素、行内块元素</h1><p><strong>行内元素</strong></p>
+<p>与其他元素并排；<br>设置宽高无效，默认文字宽度；<br>对margin上下无效，左右有效；padding上下左右都有效；<br>不会自动换行。<br>文本级标签，除了</p><p>标签都是行内元素。</p>
+<pre><code>&lt;span&gt;
+&lt;a&gt;
+&lt;img&gt;
+&lt;b&gt;
+&lt;i&gt;
+&lt;sub&gt;下标
+&lt;sup&gt;上标</code></pre>
+        
+          <a class="article-more-a" href="/chengpingping.github.io/2019/09/23/前端HTML笔试/#more">more >></a>
+        
       
 
       
@@ -521,7 +526,8 @@ console.log(nums);</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="6-浏览器从输入网址到页面显示完成有哪些处理过程"><a href="#6-浏览器从输入网址到页面显示完成有哪些处理过程" class="headerlink" title="6.浏览器从输入网址到页面显示完成有哪些处理过程"></a>6.浏览器从输入网址到页面显示完成有哪些处理过程</h1><p><strong>过程</strong>：浏览器输入域名-&gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&gt;DNS查询到域名（获取相应的IP）-&gt;TCP/IP链接（三次握手）-&gt;建立连接-&gt;浏览器发出请求（数据）-&gt;服务器响应（将数据返回浏览器）-&gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树；解析CSS样式，浏览器渲染；JS交互绑定域名，数量不限）</p>
+        <h1 id="7-ajax中get和post的区别"><a href="#7-ajax中get和post的区别" class="headerlink" title="7.ajax中get和post的区别"></a>7.ajax中get和post的区别</h1><p><a href="https://blog.csdn.net/qq_38499084/article/details/79699210" target="_blank" rel="noopener">参考</a></p>
+<h1 id="6-浏览器从输入网址到页面显示完成有哪些处理过程"><a href="#6-浏览器从输入网址到页面显示完成有哪些处理过程" class="headerlink" title="6.浏览器从输入网址到页面显示完成有哪些处理过程"></a>6.浏览器从输入网址到页面显示完成有哪些处理过程</h1><p><strong>过程</strong>：浏览器输入域名-&gt;浏览器查询dns是否有缓存（如有缓存直接显示）-&gt;DNS查询到域名（获取相应的IP）-&gt;TCP/IP链接（三次握手）-&gt;建立连接-&gt;浏览器发出请求（数据）-&gt;服务器响应（将数据返回浏览器）-&gt;浏览器会先获得响应头再获得响应体（浏览器接收响应，读取页面内容，解析html源码，生成DOM树；解析CSS样式，浏览器渲染；JS交互绑定域名，数量不限）</p>
 <p><strong>DNS</strong>(Domain Name System,域名系统)，是万维网上域名和IP地址相互映射的一个分布式数据库，能将域名翻译为IP地址。</p>
 <p><strong>三次握手</strong></p>
 <p>第一次：主机向服务器发送建立连接的请求；</p>

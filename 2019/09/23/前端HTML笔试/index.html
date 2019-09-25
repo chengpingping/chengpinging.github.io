@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端HTML笔试 | CPPBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.H5中新增的标签h5中新增的标签">
+  <meta name="description" content="2.行内元素、块状元素、行内块元素行内元素 与其他元素并排；设置宽高无效，默认文字宽度；对margin上下无效，左右有效；padding上下左右都有效；不会自动换行。文本级标签，除了标签都是行内元素。 &amp;lt;span&amp;gt; &amp;lt;a&amp;gt; &amp;lt;img&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;sub&amp;gt;下标 &amp;lt;sup&amp;gt;上标">
 <meta name="keywords" content="web development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端HTML笔试">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/前端HTML笔试/index.html">
 <meta property="og:site_name" content="CPPBlog">
-<meta property="og:description" content="1.H5中新增的标签h5中新增的标签">
+<meta property="og:description" content="2.行内元素、块状元素、行内块元素行内元素 与其他元素并排；设置宽高无效，默认文字宽度；对margin上下无效，左右有效；padding上下左右都有效；不会自动换行。文本级标签，除了标签都是行内元素。 &amp;lt;span&amp;gt; &amp;lt;a&amp;gt; &amp;lt;img&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;sub&amp;gt;下标 &amp;lt;sup&amp;gt;上标">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-23T11:21:53.270Z">
+<meta property="og:updated_time" content="2019-09-25T12:13:51.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端HTML笔试">
-<meta name="twitter:description" content="1.H5中新增的标签h5中新增的标签">
+<meta name="twitter:description" content="2.行内元素、块状元素、行内块元素行内元素 与其他元素并排；设置宽高无效，默认文字宽度；对margin上下无效，左右有效；padding上下左右都有效；不会自动换行。文本级标签，除了标签都是行内元素。 &amp;lt;span&amp;gt; &amp;lt;a&amp;gt; &amp;lt;img&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;sub&amp;gt;下标 &amp;lt;sup&amp;gt;上标">
   
     <link rel="alternative" href="/atom.xml" title="CPPBlog" type="application/atom+xml">
   
@@ -167,7 +167,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-H5中新增的标签"><a href="#1-H5中新增的标签" class="headerlink" title="1.H5中新增的标签"></a>1.H5中新增的标签</h1><p><a href="https://github.com/chengpingping/H5andCSS3#h5%E4%B8%AD%E7%9A%84%E6%96%B0%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">h5中新增的标签</a></p>
+        <h1 id="2-行内元素、块状元素、行内块元素"><a href="#2-行内元素、块状元素、行内块元素" class="headerlink" title="2.行内元素、块状元素、行内块元素"></a>2.行内元素、块状元素、行内块元素</h1><p><strong>行内元素</strong></p>
+<p>与其他元素并排；<br>设置宽高无效，默认文字宽度；<br>对margin上下无效，左右有效；padding上下左右都有效；<br>不会自动换行。<br>文本级标签，除了</p><p>标签都是行内元素。</p>
+<pre><code>&lt;span&gt;
+&lt;a&gt;
+&lt;img&gt;
+&lt;b&gt;
+&lt;i&gt;
+&lt;sub&gt;下标
+&lt;sup&gt;上标</code></pre><a id="more"></a>
+
+<p><strong>块状元素</strong></p>
+<p>能够识别宽高；<br>margin和padding的上下左右都有效；<br>可以自动换行；<br>多个块元素默认从上至下。<br>所有容器级标签，和</p><p>标签。</p>
+<pre><code>&lt;div&gt;
+&lt;p&gt;
+&lt;nav&gt;
+&lt;aside&gt;
+&lt;ul&gt;、&lt;li&gt;</code></pre><p><strong>行内块元素</strong></p>
+<p>不自动换行；<br>能识别宽高；<br>默认排列是从左到右。</p>
+<pre><code>综合了行内元素和块状元素的特性，但又有所取舍。</code></pre><p><strong>空元素</strong></p>
+<p>没有内容；</p>
+<p>没有结束标签。</p>
+<pre><code>&lt;br /&gt;
+&lt;meta&gt;
+&lt;link&gt;
+&lt;img&gt;</code></pre><h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>使用<code>display</code>属性对三者进行任意的转换：</p>
+<pre><code>display:inline;转换为行内元素
+display:block;转换为块元素
+display:inline-block;转换为行内块元素</code></pre><p><a href="https://www.cnblogs.com/ljwk/p/7090320.html" target="_blank" rel="noopener">参考1</a></p>
+<p><a href="https://www.cnblogs.com/Aaxuan/p/6094463.html" target="_blank" rel="noopener">参考2</a></p>
+<h1 id="1-H5中新增的标签"><a href="#1-H5中新增的标签" class="headerlink" title="1.H5中新增的标签"></a>1.H5中新增的标签</h1><p><a href="https://github.com/chengpingping/H5andCSS3#h5%E4%B8%AD%E7%9A%84%E6%96%B0%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">h5中新增的标签</a></p>
 
       
 
